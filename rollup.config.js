@@ -31,10 +31,7 @@ export default {
     svgr(),
     babel({
       exclude: 'node_modules/**',
-      plugins: [
-        '@babel/plugin-external-helpers',
-        '@babel/plugin-proposal-optional-chaining',
-      ],
+      plugins: ['@babel/plugin-proposal-optional-chaining'],
     }),
     resolve(),
     commonjs(),
