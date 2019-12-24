@@ -39,7 +39,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
+const PatientDetail = ({
+  onUpsert,
+  onCancel,
+  onDelete,
+  patient,
+  fieldVariant,
+}) => {
   const classes = useStyles()
   const [patientId, setPatientId] = useState(false)
   const [currentPatient, setCurrentPatient] = useState({
@@ -112,8 +118,8 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
   })
   const [form, setForm] = useState({
     prefix: '',
-    family: '',
-    given: '',
+    familyName: '',
+    givenName: '',
     suffix: '',
     identifier: '',
     deceased: false,
@@ -135,22 +141,34 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
   const dehydratePatientResource = patient => {
     setForm(prevForm => ({
       ...prevForm,
-      prefix: patient.name[0].prefix[0],
-      family: patient.name[0].family[0],
-      given: patient.name[0].given[0],
-      suffix: patient.name[0].suffix[0],
+      prefix: Array.isArray(patient.name[0]?.prefix)
+        ? patient.name[0].prefix[0]
+        : patient.name[0].prefix,
+      familyName: Array.isArray(patient.name[0]?.family)
+        ? patient.name[0].family[0]
+        : patient.name[0].family,
+      givenName: Array.isArray(patient.name[0]?.given)
+        ? patient.name[0].given[0]
+        : patient.name[0].given,
+      suffix: Array.isArray(patient.name[0]?.suffix)
+        ? patient.name[0].suffix[0]
+        : patient.name[0].suffix,
       identifier: patient.identifier[0].value,
-      identifierType: patient.identifier[0].type.coding[0].code,
+      identifierType: patient.identifier[0]?.type?.coding[0]?.code,
       deceased: patient.deceasedBoolean,
       multipleBirth: patient.multipleBirthBoolean,
       gender: patient.gender,
       maritalStatus: patient.maritalStatus.text,
-      species: patient.animal.species.text,
-      language: patient.communication[0].language.text,
-      photo: patient.photo[0].url,
-      phone: patient.telecom
-        .map(el => (el.system === 'phone' ? el.value : ''))
-        .filter(el => !!el),
+      species: patient.animal?.species?.text,
+      language: Array.isArray(patient.communication)
+        ? patient.communication[0]?.language?.text
+        : '',
+      photo: patient.photo ? patient.photo[0].url : '',
+      phone:
+        Array.isArray(patient.telecom) &&
+        patient.telecom
+          .map(el => (el.system === 'phone' ? el.value : ''))
+          .filter(el => !!el),
       birthDate: patient.birthDate,
     }))
   }
@@ -174,14 +192,14 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
           }))
           patientData.name[0].prefix[0] = e.target.value
           break
-        case 'family':
+        case 'familyName':
           setForm(prevForm => ({
             ...prevForm,
             [e.target.name]: e.target.value,
           }))
           patientData.name[0].family[0] = e.target.value
           break
-        case 'given':
+        case 'givenName':
           setForm(prevForm => ({
             ...prevForm,
             [e.target.name]: e.target.value,
@@ -262,7 +280,7 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
           break
       }
     }
-    console.log('patientData: ', patientData)
+
     setCurrentPatient(patientData)
   }
 
@@ -333,6 +351,11 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               value={form.identifier}
               fullWidth
               disabled
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -358,26 +381,41 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               value={form.prefix}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
             <TextField
               id="givenInput"
-              name="given"
+              name="givenName"
               label="Given Name"
-              value={form.given}
+              value={form.givenName}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
             <TextField
               id="familyInput"
-              name="family"
+              name="familyName"
               label="Family Name"
-              value={form.family}
+              value={form.familyName}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -388,6 +426,11 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               value={form.suffix}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -395,10 +438,14 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               id="maritalStatusInput"
               name="maritalStatus"
               label="Marital Status"
-              placeholder="single | maried | other"
               value={form.maritalStatus}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -437,6 +484,7 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               changeState={changeState}
               name="birthDate"
               label="Birthdate"
+              fieldVariant="outlined"
             />
           </Grid>
           <Grid item>
@@ -459,10 +507,14 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               id="photoInput"
               name="photo"
               label="Photo"
-              placeholder="http://somewhere.com/image.jpg"
               value={form.photo}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -471,9 +523,13 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               name="species"
               label="Species"
               value={form.species}
-              placeholder="Human"
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -483,8 +539,12 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               label="Language"
               value={form.language}
               onChange={changeState}
-              placeholder="English"
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -492,10 +552,14 @@ const PatientDetail = ({ onUpsert, onCancel, onDelete, patient }) => {
               id="phoneInput"
               name="phone"
               label="Phone"
-              placeholder="555-555-1234"
               value={form.phone}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
         </Grid>
@@ -512,5 +576,6 @@ PatientDetail.propTypes = {
   onUpsert: PropTypes.func,
   onSave: PropTypes.func,
   onCancel: PropTypes.func,
+  fieldVariant: PropTypes.string,
 }
 export default PatientDetail

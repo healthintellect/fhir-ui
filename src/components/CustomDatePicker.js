@@ -9,6 +9,7 @@ const CustomDatePicker = ({
   changeState,
   name,
   label,
+  fieldVariant,
 }) => {
   if (displayDatePicker) {
     let momentDate
@@ -28,6 +29,11 @@ const CustomDatePicker = ({
         onChange={changeState}
         fullWidth
         margin="normal"
+        inputVariant={fieldVariant}
+        size="small"
+        InputLabelProps={{
+          shrink: true,
+        }}
       />
     )
   }

@@ -40,7 +40,13 @@ const useStyles = makeStyles(theme => ({
   },
 }))
 
-const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
+const ObservationDetail = ({
+  onUpsert,
+  onCancel,
+  onDelete,
+  observation,
+  fieldVariant,
+}) => {
   const classes = useStyles()
   const [observationId, setObservationId] = useState(false)
   const [currentObservation, setCurrentObservation] = useState({
@@ -287,6 +293,11 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               label="LOINC Code Text"
               value={form.loincCodeText}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -297,6 +308,11 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               value={form.loincCode}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -307,6 +323,11 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               value={form.comparator}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -317,6 +338,11 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               value={form.quantity}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -327,6 +353,11 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               value={form.unit}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -337,6 +368,11 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               value={form.value}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -344,10 +380,14 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               id="statusInput"
               name="status"
               label="Status"
-              placeholder="preliminary | final"
               value={form.status}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -355,10 +395,14 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               id="deviceDisplayInput"
               name="deviceDisplay"
               label="Device Name"
-              placeholder="iHealth Blood Pressure Cuff"
               value={form.deviceDisplay}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -366,10 +410,14 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               id="deviceReferenceInput"
               name="deviceReference"
               label="Device ID"
-              placeholder="Device/444"
               value={form.deviceReference}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -379,6 +427,11 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               changeState={changeState}
               name="effectiveDateTime"
               label="Effective Date"
+              fieldVariant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -387,9 +440,13 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               name="subjectDisplay"
               label="Subject Name"
               value={form.subjectDisplay}
-              placeholder="Jane Doe"
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -399,8 +456,12 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               label="Subject ID"
               value={form.subjectReference}
               onChange={changeState}
-              placeholder="Patient/12345"
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
           <Grid item>
@@ -408,10 +469,14 @@ const ObservationDetail = ({ onUpsert, onCancel, onDelete, observation }) => {
               id="categoryTextInput"
               name="category"
               label="Category"
-              placeholder="Vital Signs"
               value={form.category}
               onChange={changeState}
               fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
             />
           </Grid>
         </Grid>
@@ -429,6 +494,7 @@ ObservationDetail.propTypes = {
   onUpsert: PropTypes.func,
   onRemove: PropTypes.func,
   onCancel: PropTypes.func,
+  fieldVariant: PropTypes.string,
 }
 
 export default ObservationDetail

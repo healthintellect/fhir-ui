@@ -4,7 +4,7 @@ import { Grid, TextField, Card, Paper, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import CustomDatePicker from '../components/CustomDatePicker'
 
-const PatientCard = ({ patient, detailLink }) => {
+const PatientCard = ({ patient, detailLink, fieldVariant }) => {
   const useStyles = makeStyles(theme => ({
     root: {
       flexGrow: 1,
@@ -66,14 +66,20 @@ const PatientCard = ({ patient, detailLink }) => {
     setCurrentPatient(prevPatient => ({
       ...prevPatient,
       fullName: patient.name[0].text,
-      familyName: patient.name[0].family[0],
-      givenName: patient.name[0].given[0],
+      familyName: Array.isArray(patient.name[0].family)
+        ? patient.name[0].family[0]
+        : patient.name[0].family,
+      givenName: Array.isArray(patient.name[0].given)
+        ? patient.name[0].given[0]
+        : patient.name[0].given,
       email: patient.telecom
         .map(el => (el.system === 'email' ? el.value : ''))
         .filter(el => !!el),
       birthdate: patient.birthDate,
       gender: patient.gender,
-      avatar: patient.photo[0].url,
+      avatar: patient.photo
+        ? patient.photo[0].url
+        : 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png',
       identifier: patient.identifier[0].value,
     }))
   }, [])
@@ -119,18 +125,28 @@ const PatientCard = ({ patient, detailLink }) => {
                   onChange={updateCurrentPatient}
                   fullWidth
                   disabled
+                  variant={fieldVariant}
+                  size="small"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
                 <TextField
                   id="givenNameInput"
                   name="given"
-                  label="Given name"
+                  label="Given Name"
                   margin="normal"
                   className={classes.textField}
                   value={currentPatient.givenName}
                   onChange={updateCurrentPatient}
                   fullWidth
+                  variant={fieldVariant}
+                  size="small"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -143,6 +159,11 @@ const PatientCard = ({ patient, detailLink }) => {
                   value={currentPatient.familyName}
                   onChange={updateCurrentPatient}
                   fullWidth
+                  variant={fieldVariant}
+                  size="small"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -152,6 +173,7 @@ const PatientCard = ({ patient, detailLink }) => {
                   changeState={handleDateChange}
                   name="birthDate"
                   label="Birthdate"
+                  fieldVariant="outlined"
                 />
               </Grid>
               <Grid item xs={12} md={6}>
@@ -164,6 +186,11 @@ const PatientCard = ({ patient, detailLink }) => {
                   value={currentPatient.gender}
                   onChange={updateCurrentPatient}
                   fullWidth
+                  variant={fieldVariant}
+                  size="small"
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
                 />
               </Grid>
             </Grid>
@@ -190,6 +217,7 @@ PatientCard.propTypes = {
   hideDetails: PropTypes.bool,
   patient: PropTypes.object,
   detailLink: PropTypes.bool,
+  fieldVariant: PropTypes.string,
 }
 
 export default PatientCard

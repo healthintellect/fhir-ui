@@ -16,7 +16,13 @@ import {
   ObservationDetail,
 } from 'fhir-ui'
 
-import { patient, patients, observation, observations } from './fhir-examples'
+import {
+  patient,
+  patientTest,
+  patients,
+  observation,
+  observations,
+} from './fhir-examples'
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -87,13 +93,13 @@ const App = () => {
                 <Typography variant="subtitle1" gutterBottom align="center">
                   Patient Card
                 </Typography>
-                <PatientCard patient={patient} />
+                <PatientCard patient={patientTest} fieldVariant="outlined" />
               </Grid>
               <Grid item xs={12} md={6}>
                 <Typography variant="subtitle1" gutterBottom align="center">
                   Patient Detail
                 </Typography>
-                <PatientDetail patient={patient} />
+                <PatientDetail patient={patientTest} fieldVariant="outlined" />
               </Grid>
               <Grid item xs={12}>
                 <Typography variant="subtitle1" gutterBottom align="center">

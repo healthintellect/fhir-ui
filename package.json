@@ -3,6 +3,11 @@
   "version": "0.2.9",
   "description": "React components to display HL7 FHIR data using Material-UI",
   "homepage": "https://healthintellect.github.io/fhir-ui",
+  "keywords": [
+    "FHIR",
+    "R4",
+    "Material-UI"
+  ],
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
