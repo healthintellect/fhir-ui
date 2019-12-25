@@ -41,9 +41,9 @@ const useStyles = makeStyles({
 })
 
 const ObservationTable = ({
-  onRowClick,
   hideActionIcons,
   onRemoveRecord,
+  onRowClick,
   onCellClick,
   hideBarcodes,
   hideSubjects,
@@ -189,8 +189,8 @@ const ObservationTable = ({
   }
 
   const onMetaClick = patient => {
-    if (onMetaClick) {
-      onObservationClick(patient)
+    if (onRowClick) {
+      onRowClick(patient)
     }
   }
 

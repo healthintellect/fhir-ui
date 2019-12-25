@@ -101,7 +101,7 @@ const PatientCard = ({ patient, detailLink, fieldVariant }) => {
 
   return (
     <Paper className={classes.paper}>
-      <Grid container spacing={2} direction="row">
+      <Grid container spacing={1} direction="row">
         <Grid item>
           <Card className={classes.photo}>
             <img
@@ -113,7 +113,7 @@ const PatientCard = ({ patient, detailLink, fieldVariant }) => {
         </Grid>
         <Grid item xs>
           <form className={classes.root} noValidate autoComplete="off">
-            <Grid container direction="row" spacing={3}>
+            <Grid container direction="row" spacing={1}>
               <Grid item xs={12}>
                 <TextField
                   id="patientCardIdInput"
@@ -135,7 +135,7 @@ const PatientCard = ({ patient, detailLink, fieldVariant }) => {
               <Grid item xs={12} md={6}>
                 <TextField
                   id="givenNameInput"
-                  name="given"
+                  name="givenName"
                   label="Given Name"
                   margin="normal"
                   className={classes.textField}
@@ -152,7 +152,7 @@ const PatientCard = ({ patient, detailLink, fieldVariant }) => {
               <Grid item xs={12} md={6}>
                 <TextField
                   id="familyNameInput"
-                  name="family"
+                  name="familyName"
                   label="Family Name"
                   margin="normal"
                   className={classes.textField}

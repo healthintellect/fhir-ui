@@ -125,6 +125,7 @@ const App = () => {
                 <ObservationDetail
                   observationId={observation.id}
                   observation={observation}
+                  fieldVariant="outlined"
                 />
               </Grid>
             </Grid>

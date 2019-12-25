@@ -63,6 +63,12 @@ const PatientDetail = ({
     active: true,
     gender: '',
     birthDate: '',
+    address1: '',
+    address2: '',
+    city: '',
+    state: '',
+    postalCode: '',
+    country: '',
     photo: [
       {
         url: '',
@@ -159,6 +165,40 @@ const PatientDetail = ({
       multipleBirth: patient.multipleBirthBoolean,
       gender: patient.gender,
       maritalStatus: patient.maritalStatus.text,
+      address1: Array.isArray(patient.address)
+        ? Array.isArray(patient.address[0]?.line)
+          ? patient.address[0]?.line[0]
+          : patient.address[0]?.line
+          ? patient.address[0]?.line
+          : ''
+        : '',
+      address2: Array.isArray(patient.address)
+        ? Array.isArray(patient.address[0]?.line)
+          ? patient.address[0]?.line[1]
+          : patient.address[0]?.line
+          ? patient.address[0]?.line
+          : ''
+        : '',
+      city: Array.isArray(patient.address)
+        ? patient.address[0]?.city
+        : patient.address
+        ? patient.address
+        : '',
+      state: Array.isArray(patient.address)
+        ? patient.address[0]?.state
+        : patient.address[0].state
+        ? patient.address?.state
+        : '',
+      postalCode: Array.isArray(patient.address)
+        ? patient.address[0]?.postalCode
+        : patient.address[0].postalCode
+        ? patient.address?.postalCode
+        : '',
+      country: Array.isArray(patient.address)
+        ? patient.address[0]?.country
+        : patient.address[0].country
+        ? patient.address?.country
+        : '',
       species: patient.animal?.species?.text,
       language: Array.isArray(patient.communication)
         ? patient.communication[0]?.language?.text
@@ -284,7 +324,6 @@ const PatientDetail = ({
     setCurrentPatient(patientData)
   }
 
-  // this could be a mixin
   const handleSaveButton = () => {
     if (onUpsert) {
       onUpsert(currentPatient)
@@ -501,6 +540,96 @@ const PatientDetail = ({
                 label="Multiple Birth"
               />
             </FormGroup>
+          </Grid>
+          <Grid item>
+            <TextField
+              id="address1Input"
+              name="address1"
+              label="Address 1"
+              value={form.address1}
+              onChange={changeState}
+              fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="address1Input"
+              name="address2"
+              label="Address 2"
+              value={form.address2}
+              onChange={changeState}
+              fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="cityInput"
+              name="city"
+              label="City"
+              value={form.city}
+              onChange={changeState}
+              fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="stateInput"
+              name="state"
+              label="State"
+              value={form.state}
+              onChange={changeState}
+              fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="postalCodeInput"
+              name="postalCode"
+              label="Postal Code"
+              value={form.postalCode}
+              onChange={changeState}
+              fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
+          </Grid>
+          <Grid item>
+            <TextField
+              id="countryInput"
+              name="country"
+              label="Country"
+              value={form.country}
+              onChange={changeState}
+              fullWidth
+              variant={fieldVariant}
+              size="small"
+              InputLabelProps={{
+                shrink: true,
+              }}
+            />
           </Grid>
           <Grid item>
             <TextField

@@ -98,8 +98,11 @@ const ObservationDetail = ({
   const dehydrateObservationResource = observation => {
     setForm(prevForm => ({
       ...prevForm,
-      category: observation.category[0].coding[0].display,
-      code: observation.code?.text,
+      category: observation.category
+        ? observation.category[0]?.coding
+          ? observation.category[0]?.coding[0].display
+          : ''
+        : '',
       value: observation.valueString,
       comparator: observation.valueQuantity?.comparator,
       quantity: observation.valueQuantity?.value,
@@ -109,8 +112,15 @@ const ObservationDetail = ({
       subjectReference: observation.subject?.reference,
       effectiveDateTime: observation.effectiveDateTime,
       status: observation.status,
-      loincCode:
-        observation.code?.codeable && observation.code?.codeable[0].code,
+      loincCode: Array.isArray(observation.code?.coding)
+        ? observation.code?.coding.filter(code =>
+            code.system === 'http://loinc.org'
+              ? code.code
+              : 'No LOINC code listed',
+          )[0].code
+        : Array.isArray(observation.code?.codeable)
+        ? observation.code?.codeable[0].code
+        : 'No LOINC code listed',
       loincCodeText: observation.code?.text,
       loincCodeDisplay:
         observation.code?.codeable && observation.code?.codeable[0].display,
@@ -135,13 +145,6 @@ const ObservationDetail = ({
             [e.target.name]: e.target.value,
           }))
           observationData.category[0].coding[0].display = e.target.value
-          break
-        case 'code':
-          setForm(prevForm => ({
-            ...prevForm,
-            [e.target.name]: e.target.value,
-          }))
-          observationData.code.text = e.target.value
           break
         case 'value':
           setForm(prevForm => ({
@@ -204,7 +207,7 @@ const ObservationDetail = ({
             ...prevForm,
             [e.target.name]: e.target.value,
           }))
-          observationData.code.codeable[0].code = e.target.value
+          observationData.code.coding[0].code = e.target.value
           break
         case 'loincCodeText':
           setForm(prevForm => ({
