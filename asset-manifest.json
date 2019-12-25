@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.js": "/fhir-ui/static/js/main.d16cb5f2.chunk.js",
-    "main.js.map": "/fhir-ui/static/js/main.d16cb5f2.chunk.js.map",
+    "main.js": "/fhir-ui/static/js/main.5c278bc0.chunk.js",
+    "main.js.map": "/fhir-ui/static/js/main.5c278bc0.chunk.js.map",
     "runtime-main.js": "/fhir-ui/static/js/runtime-main.12b6a81d.js",
     "runtime-main.js.map": "/fhir-ui/static/js/runtime-main.12b6a81d.js.map",
-    "static/js/2.c15347f4.chunk.js": "/fhir-ui/static/js/2.c15347f4.chunk.js",
-    "static/js/2.c15347f4.chunk.js.map": "/fhir-ui/static/js/2.c15347f4.chunk.js.map",
+    "static/js/2.dcf0ebdd.chunk.js": "/fhir-ui/static/js/2.dcf0ebdd.chunk.js",
+    "static/js/2.dcf0ebdd.chunk.js.map": "/fhir-ui/static/js/2.dcf0ebdd.chunk.js.map",
     "index.html": "/fhir-ui/index.html",
-    "precache-manifest.54bbcbb814bcfbe5515049d151fb6f7a.js": "/fhir-ui/precache-manifest.54bbcbb814bcfbe5515049d151fb6f7a.js",
+    "precache-manifest.b0db40bba4714741a067b4f9bb7f09b8.js": "/fhir-ui/precache-manifest.b0db40bba4714741a067b4f9bb7f09b8.js",
     "service-worker.js": "/fhir-ui/service-worker.js",
-    "static/js/2.c15347f4.chunk.js.LICENSE": "/fhir-ui/static/js/2.c15347f4.chunk.js.LICENSE"
+    "static/js/2.dcf0ebdd.chunk.js.LICENSE": "/fhir-ui/static/js/2.dcf0ebdd.chunk.js.LICENSE"
   },
   "entrypoints": [
     "static/js/runtime-main.12b6a81d.js",
-    "static/js/2.c15347f4.chunk.js",
-    "static/js/main.d16cb5f2.chunk.js"
+    "static/js/2.dcf0ebdd.chunk.js",
+    "static/js/main.5c278bc0.chunk.js"
   ]
 }
