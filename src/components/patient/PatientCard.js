@@ -174,7 +174,7 @@ const PatientCard = ({ patient, detailLink, fieldVariant }) => {
                   className={classes.textField}
                   name="birthDate"
                   label="Birthdate"
-                  fieldVariant="outlined"
+                  fieldVariant={fieldVariant}
                 />
               </Grid>
               <Grid item xs={12} md={6}>

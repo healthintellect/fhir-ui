@@ -31,7 +31,7 @@ const CustomDatePicker = ({
         fullWidth
         margin="normal"
         className={className}
-        inputVariant={fieldVariant}
+        inputVariant={fieldVariant || 'standard'}
         size="small"
         InputLabelProps={{
           shrink: true,

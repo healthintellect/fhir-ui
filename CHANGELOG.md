@@ -1,8 +1,12 @@
-## fhir-ui
+## fhir-ui Changelog
 
 All notable changes to this project will be documented in this file.
 
 ### [Unreleased][unreleased]
+
+### [v0.3.8][2019-12-29]
+
+- Fix date of birth field variant in PatientCard and PatientDetail
 
 ### [v0.3.7][2019-12-29]
 

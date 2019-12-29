@@ -523,7 +523,7 @@ const PatientDetail = ({
               changeState={changeState}
               name="birthDate"
               label="Birthdate"
-              fieldVariant="outlined"
+              fieldVariant={fieldVariant}
             />
           </Grid>
           <Grid item>
