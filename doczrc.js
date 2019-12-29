@@ -1,4 +1,5 @@
 export default {
+  base: '/fhir-ui/',
   title: 'fhir-ui Documentation',
   files: '**/*.{md,markdown,mdx}',
   menu: ['Getting Started', 'Components', 'FHIR Examples'],

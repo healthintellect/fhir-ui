@@ -8,8 +8,10 @@
     "email": "info@healthintellect.com"
   },
   "keywords": [
+    "HL7",
     "FHIR",
     "R4",
+    "React",
     "Material-UI"
   ],
   "main": "dist/index.js",
@@ -26,6 +28,8 @@
     "README.md"
   ],
   "peerDependencies": {
+    "@date-io/core": ">=1.2.0",
+    "@date-io/moment": ">=1.2.0",
     "@material-ui/core": ">=4.0.0",
     "@material-ui/icons": ">=4.0.0",
     "@material-ui/pickers": ">=3.0.0",
@@ -63,6 +67,7 @@
     "@svgr/rollup": "^2.4.1",
     "babel-eslint": "^10.0.3",
     "core-js": "^3.3.5",
+    "docz": "^2.2.0",
     "eslint": "^6.6.0",
     "eslint-plugin-import": "^2.18.2",
     "eslint-plugin-prettier": "^3.1.1",
@@ -82,7 +87,5 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-url": "^3.0.1"
   },
-  "dependencies": {
-    "docz": "^2.2.0"
-  }
+  "dependencies": {}
 }

@@ -1,6 +1,15 @@
 ## [fhir-ui](https://healthintellect.com)
 
-[![npm package](https://img.shields.io/npm/v/material-ui.svg?style=flat-square)](https://www.npmjs.org/package/fhir-ui)
+[![npm package](https://img.shields.io/npm/v/fhir-ui?style=flat-square)](https://www.npmjs.org/package/fhir-ui)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/react?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/react-dom?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/@material-ui/core?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/@material-ui/pickers?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/@material-ui/icons?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/moment?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/@date-io/core?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/@date-io/moment?style=flat-square)
+![npm peer dependency version](https://img.shields.io/npm/dependency-version/fhir-ui/peer/clsx?style=flat-square)
 
 fhir-ui [React](http://facebook.github.io/react/) components are used in conjunction with the [Material UI](http://www.material-ui.com/) component library to display [HL7 FHIR Resources](https://www.hl7.org/fhir/resourcelist.html) using [Google's Material Design](https://www.google.com/design/spec/material-design/introduction.html) specification.
 
