@@ -1,0 +1,35 @@
+---
+name: ObservationDetail
+menu: Components
+route: /components/observation/ObservationDetail
+---
+
+import { Playground, Props } from 'docz'
+import { Container, Grid } from '@material-ui/core'
+import ObservationDetail from './ObservationDetail'
+import { observation } from '../../examples/fhir-examples.js'
+
+# ObservationDetail
+
+ObservationDetail displays a material-ui card component when passed a FHIR Observation Resource using the observation property. Different styles of fields can be used as shown below.
+
+## Properties
+
+<Props of={ObservationDetail} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <Grid container spacing={3} direction="row">
+      <Grid item xs={12}>
+        <ObservationDetail
+          observation={observation}
+          fieldVariant="outlined"
+          hidePatientInputs={false}
+          hideDeviceInputs={true}
+        />
+      </Grid>
+    </Grid>
+  </Container>
+</Playground>

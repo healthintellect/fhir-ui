@@ -1,0 +1,14 @@
+---
+name: Patients
+menu: FHIR Examples
+route: /examples/fhir-examples/patients
+---
+
+import { Playground, Props } from 'docz'
+import { patients } from '../examples/fhir-examples.js'
+
+# Array of Patient FHIR Resources
+
+<Playground>
+  <pre>{JSON.stringify(patients, null, 2)}</pre>
+</Playground>

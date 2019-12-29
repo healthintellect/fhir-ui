@@ -1,0 +1,36 @@
+---
+name: ObservationTable
+menu: Components
+route: /components/observation/ObservationTable
+---
+
+import { Playground, Props } from 'docz'
+import { Container, Grid } from '@material-ui/core'
+import ObservationTable from './ObservationTable'
+import { observations } from '../../examples/fhir-examples'
+
+# ObservationTable
+
+ObservationTable displays a material-ui table component when passed an array of FHIR Observation Resources using the observations property. Different styles of fields can be used as shown below.
+
+## Properties
+
+<Props of={ObservationTable} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <Grid container spacing={3} direction="row">
+      <Grid item xs={12}>
+        <ObservationTable
+          observations={observations}
+          tableTitle="Observation List"
+          tableSize="medium"
+          hideDevices={true}
+          hideCheckboxes={true}
+        />
+      </Grid>
+    </Grid>
+  </Container>
+</Playground>

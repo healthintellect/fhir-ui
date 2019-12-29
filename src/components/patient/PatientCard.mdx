@@ -1,0 +1,30 @@
+---
+name: PatientCard
+menu: Components
+route: /components/patient/PatientCard
+---
+
+import { Playground, Props } from 'docz'
+import { Container, Grid, Typography, Link } from '@material-ui/core'
+import PatientCard from './PatientCard'
+import { patient } from '../../examples/fhir-examples'
+
+# PatientCard
+
+PatientCard displays a material-ui card component with the FHIR patient's data passed into it using the patient property. Different styles of fields can be used as shown below.
+
+## Properties
+
+<Props of={PatientCard} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <Grid container spacing={3} direction="row">
+      <Grid item xs={12}>
+        <PatientCard patient={patient} fieldVariant="outlined" />
+      </Grid>
+    </Grid>
+  </Container>
+</Playground>
