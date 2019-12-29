@@ -3,6 +3,10 @@
   "version": "0.2.10",
   "description": "React components to display HL7 FHIR data using Material-UI",
   "homepage": "https://healthintellect.github.io/fhir-ui",
+  "bugs": {
+    "url": "https://github.com/healthintellect/fhir-ui/issues",
+    "email": "info@healthintellect.com"
+  },
   "keywords": [
     "FHIR",
     "R4",
@@ -36,8 +40,10 @@
     "build": "rollup -c",
     "start": "rollup -c -w",
     "prepare": "yarn run build",
-    "predeploy": "cd example && yarn install && yarn run build",
-    "deploy": "gh-pages -d example/build"
+    "docz:dev": "docz dev --config ./doczrc.js",
+    "docz:build": "docz build --config ./doczrc.js",
+    "docz:serve": "yarn docz:build && yarn serve --config ./doczrc.js",
+    "deploy": "gh-pages -d .docz/dist"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -76,5 +82,7 @@
     "rollup-plugin-postcss": "^2.0.3",
     "rollup-plugin-url": "^3.0.1"
   },
-  "dependencies": {}
+  "dependencies": {
+    "docz": "^2.2.0"
+  }
 }
