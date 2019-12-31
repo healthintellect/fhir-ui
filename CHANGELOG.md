@@ -4,6 +4,10 @@ All notable changes to this project will be documented in this file.
 
 ### [Unreleased][unreleased]
 
+### [v0.4.1][2019-12-31]
+
+- Add PatientBanner component and documentation
+
 ### [v0.3.8][2019-12-29]
 
 - Fix date of birth field variant in PatientCard and PatientDetail
