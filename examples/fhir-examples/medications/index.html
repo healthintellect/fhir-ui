@@ -1,0 +1,350 @@
+<!DOCTYPE html><html lang="en"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="ie=edge"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><style data-href="/fhir-ui/styles.2543ff947a193d7f33b1.css">@import url(https://fonts.googleapis.com/css?family=Inconsolata&display=swap);@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap);</style><meta name="generator" content="Gatsby 2.18.17"/><title data-rh="true">Medications | fhir-ui Documentation</title><meta data-rh="true" name="description" content="React components to display HL7 FHIR data using Material-UI"/><meta data-rh="true" property="og:title" content="Medications"/><meta data-rh="true" property="og:description" content="React components to display HL7 FHIR data using Material-UI"/><meta data-rh="true" property="og:type" content="website"/><meta data-rh="true" name="twitter:card" content="summary"/><meta data-rh="true" name="twitter:title" content="Medications"/><meta data-rh="true" name="twitter:description" content="React components to display HL7 FHIR data using Material-UI"/><link as="script" rel="preload" href="/fhir-ui/webpack-runtime-f6654912f826385cce3b.js"/><link as="script" rel="preload" href="/fhir-ui/styles-a31cf4910fe92505c124.js"/><link as="script" rel="preload" href="/fhir-ui/app-53d074dc23f3d22f94ba.js"/><link as="script" rel="preload" href="/fhir-ui/commons-48e90f3ddb230b9fc3de.js"/><link as="script" rel="preload" href="/fhir-ui/component---src-examples-medications-example-mdx-a4495629be3e0d981f00.js"/><link as="fetch" rel="preload" href="/fhir-ui/page-data/examples/fhir-examples/medications/page-data.json" crossorigin="anonymous"/></head><body><div id="___gatsby"><div style="outline:none" tabindex="-1" role="group" id="gatsby-focus-wrapper"><style data-emotion-css="1ouyflx">.css-1ouyflx{font-family:'Source Sans Pro',sans-serif;font-size:20px;font-weight:400;line-height:1.5;color:var(--theme-ui-colors-text,#2D3747);background-color:var(--theme-ui-colors-background,#FFFFFF);}</style><div class="css-1ouyflx"><style data-emotion-css="jrjj6h">.css-jrjj6h > div{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;}</style><style data-emotion-css="1ubpee3">.css-1ubpee3{min-height:100vh;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.css-1ubpee3 > div{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;}</style><style data-emotion-css="hbri28">.css-hbri28{box-sizing:border-box;min-width:0;min-height:100vh;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;}.css-hbri28 > div{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;}</style><div data-testid="layout" class="css-hbri28"><style data-emotion-css="1xva7m0">body{margin:0;padding:0;}.icon-link{display:none;}.with-overlay{overflow:hidden;}</style><style data-emotion-css="zf0iqh">.css-zf0iqh{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;}</style><style data-emotion-css="1tjxv7i">.css-1tjxv7i{-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;}</style><style data-emotion-css="238csb">.css-238csb{box-sizing:border-box;min-width:0;-webkit-flex:1 1 auto;-ms-flex:1 1 auto;flex:1 1 auto;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;min-height:100vh;}</style><main class="css-238csb"><style data-emotion-css="18wmtq">.css-18wmtq{background-color:var(--theme-ui-colors-header-bg,#F5F6F7);position:relative;z-index:1;border-bottom:1px solid var(--theme-ui-colors-border,#CED4DE);}</style><div data-testid="header" class="css-18wmtq"><style data-emotion-css="zankq9">.css-zankq9{display:none;position:absolute;top:calc(100% + 15px);left:30px;}@media screen and (max-width:57.5em){.css-zankq9{display:block;}}</style><style data-emotion-css="1s0wdqz">.css-1s0wdqz{box-sizing:border-box;min-width:0;display:none;position:absolute;top:calc(100% + 15px);left:30px;}@media screen and (max-width:57.5em){.css-1s0wdqz{display:block;}}</style><div class="css-1s0wdqz"><style data-emotion-css="4019lz">.css-4019lz{padding:0;outline:none;background:transparent;border:none;color:var(--theme-ui-colors-header-text,#2D3747);opacity:0.5;cursor:pointer;}.css-4019lz:hover{cursor:pointer;}</style><button class="css-4019lz"><svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button></div><style data-emotion-css="z6jak6">.css-z6jak6{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;padding-left:32px;padding-right:32px;position:relative;height:80px;}</style><div class="css-z6jak6"><style data-emotion-css="xenp3v">.css-xenp3v{-webkit-letter-spacing:-0.02em;-moz-letter-spacing:-0.02em;-ms-letter-spacing:-0.02em;letter-spacing:-0.02em;font-weight:600;font-size:24px;}</style><style data-emotion-css="1abzlu">.css-1abzlu{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-letter-spacing:-0.02em;-moz-letter-spacing:-0.02em;-ms-letter-spacing:-0.02em;letter-spacing:-0.02em;font-weight:600;font-size:24px;}</style><style data-emotion-css="ug0363">.css-ug0363{box-sizing:border-box;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-letter-spacing:-0.02em;-moz-letter-spacing:-0.02em;-ms-letter-spacing:-0.02em;letter-spacing:-0.02em;font-weight:600;font-size:24px;}</style><div data-testid="logo" class="css-ug0363"><style data-emotion-css="d5k7p2">.css-d5k7p2{font-weight:600;color:var(--theme-ui-colors-header-text,#2D3747);-webkit-text-decoration:none;text-decoration:none;}.css-d5k7p2:hover{color:var(--theme-ui-colors-primary,#4967a9);}</style><a class="css-d5k7p2" href="/fhir-ui/">fhir-ui Documentation</a></div><style data-emotion-css="k008qs">.css-k008qs{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}</style><style data-emotion-css="80zs6q">.css-80zs6q{box-sizing:border-box;min-width:0;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;}</style><div class="css-80zs6q"><style data-emotion-css="12z0wuy">.css-12z0wuy{margin-right:8px;}</style><style data-emotion-css="q6cf68">.css-q6cf68{box-sizing:border-box;min-width:0;margin-right:8px;}</style><div class="css-q6cf68"><style data-emotion-css="1is33jg">.css-1is33jg{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;outline:none;padding:12px;border:none;border-radius:9999px;background-color:var(--theme-ui-colors-header-button-bg,#0B5FFF);color:var(--theme-ui-colors-header-button-color,#FFFFFF);font-size:12px;font-weight:600;cursor:pointer;}</style><a href="https://github.com/healthintellect/fhir-ui" target="_blank" rel="noopener noreferrer" class="css-1is33jg"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a></div><button class="css-1is33jg"><svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg></button></div><style data-emotion-css="1gncnz1">.css-1gncnz1{display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:center;-webkit-justify-content:center;-ms-flex-pack:center;justify-content:center;position:absolute;bottom:-40px;right:30px;background-color:transparent;color:var(--theme-ui-colors-muted,#67788a);font-size:14px;-webkit-text-decoration:none;text-decoration:none;border-radius:4px;}</style><a href="https://github.com/healthintellect/fhir-ui/edit/master/src/src/src/examples/medications-example.mdx" target="_blank" rel="noopener noreferrer" class="css-1gncnz1"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 3a2.828 2.828 0 1 1 4 4L7.5 20.5 2 22l1.5-5.5L17 3z"></path></svg><style data-emotion-css="1iuj5ih">.css-1iuj5ih{padding-left:8px;}</style><style data-emotion-css="1x2jprh">.css-1x2jprh{box-sizing:border-box;min-width:0;padding-left:8px;}</style><div class="css-1x2jprh">Edit page</div></a></div></div><style data-emotion-css="w2cmj1">.css-w2cmj1{padding-top:0;padding-bottom:0;-webkit-flex:1;-ms-flex:1;flex:1;display:grid;grid-template-columns:250px 1fr;min-height:100vh;}@media screen and (max-width:57.5em){.css-w2cmj1{display:block;}}</style><div class="css-w2cmj1"><style data-emotion-css="1tn7q1x">.css-1tn7q1x{z-index:999;position:fixed;top:81px;right:0;bottom:0;left:0;background:rgba(0,0,0,0.6);-webkit-transition:all .2s ease-out;transition:all .2s ease-out;visibility:hidden;opacity:0;}</style><style data-emotion-css="h4snl3">.css-h4snl3{box-sizing:border-box;min-width:0;z-index:999;position:fixed;top:81px;right:0;bottom:0;left:0;background:rgba(0,0,0,0.6);-webkit-transition:all .2s ease-out;transition:all .2s ease-out;visibility:hidden;opacity:0;}</style><div class="css-h4snl3"></div><style data-emotion-css="1ethd5x">.css-1ethd5x{padding-top:32px;padding-bottom:32px;padding-left:32px;padding-right:32px;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:-webkit-sticky;position:sticky;top:0;z-index:1;min-width:0;max-height:100vh;border-right:1px solid var(--theme-ui-colors-border,#CED4DE);overflow:auto;-webkit-overflow-scrolling:touch;background-color:var(--theme-ui-colors-sidebar-bg,#FFFFFF);}@media screen and (max-width:57.5em){.css-1ethd5x{z-index:9999;display:block;position:fixed;top:81px;left:0;bottom:0;width:256px;padding-left:32px;padding-right:32px;background-color:var(--theme-ui-colors-background,#FFFFFF);-webkit-transition:-webkit-transform .2s ease-out;-webkit-transition:transform .2s ease-out;transition:transform .2s ease-out;-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);}}</style><style data-emotion-css="1li9yso">.css-1li9yso{box-sizing:border-box;min-width:0;padding-top:32px;padding-bottom:32px;padding-left:32px;padding-right:32px;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;position:-webkit-sticky;position:sticky;top:0;z-index:1;min-width:0;max-height:100vh;border-right:1px solid var(--theme-ui-colors-border,#CED4DE);overflow:auto;-webkit-overflow-scrolling:touch;background-color:var(--theme-ui-colors-sidebar-bg,#FFFFFF);}@media screen and (max-width:57.5em){.css-1li9yso{z-index:9999;display:block;position:fixed;top:81px;left:0;bottom:0;width:256px;padding-left:32px;padding-right:32px;background-color:var(--theme-ui-colors-background,#FFFFFF);-webkit-transition:-webkit-transform .2s ease-out;-webkit-transition:transform .2s ease-out;transition:transform .2s ease-out;-webkit-transform:translateX(-100%);-ms-transform:translateX(-100%);transform:translateX(-100%);}}</style><div data-testid="sidebar" class="css-1li9yso"><style data-emotion-css="lcm9hh">.css-lcm9hh{margin-bottom:16px;display:-webkit-inline-box;display:-webkit-inline-flex;display:-ms-inline-flexbox;display:inline-flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div data-testid="nav-search" class="css-lcm9hh"><style data-emotion-css="1mo6uhh">.css-1mo6uhh{color:var(--theme-ui-colors-border,#CED4DE);margin-right:8px;}</style><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="css-1mo6uhh"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg><style data-emotion-css="1bbueiu">.css-1bbueiu{outline:none;background:none;border:none;color:var(--theme-ui-colors-text,#2D3747);font-size:14px;}</style><input placeholder="Type to search..." value="" class="css-1bbueiu"/></div><style data-emotion-css="1rqvyud">.css-1rqvyud{margin-top:8px;margin-bottom:8px;display:block;color:var(--theme-ui-colors-sidebar-navGroup,#2D3747);-webkit-text-decoration:none;text-decoration:none;font-size:16px;}.css-1rqvyud.active{color:var(--theme-ui-colors-sidebar-navLinkActive,#0B5FFF);}</style><a class="css-1rqvyud" href="/fhir-ui/">Getting Started</a><style data-emotion-css="1ebprri">.css-1ebprri{margin-top:16px;margin-bottom:16px;}</style><div data-testid="nav-group" class="css-1ebprri"><style data-emotion-css="1c8kbwa">.css-1c8kbwa{margin-bottom:4px;font-size:16px;font-weight:500;color:var(--theme-ui-colors-sidebar-navGroup,#2D3747);cursor:pointer;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;}</style><div class="css-1c8kbwa">Components<style data-emotion-css="cu2sly">.css-cu2sly{margin-left:4px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-align-self:baseline;-ms-flex-item-align:baseline;align-self:baseline;-webkit-transform:rotateX(0deg);-ms-transform:rotateX(0deg);transform:rotateX(0deg);-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center;-webkit-transition:-webkit-transform .3s ease-in-out;-webkit-transition:transform .3s ease-in-out;transition:transform .3s ease-in-out;}</style><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="css-cu2sly"><polyline points="6 9 12 15 18 9"></polyline></svg></div><style data-emotion-css="1isemmb">.css-1isemmb{margin-left:8px;}</style><div data-testid="nav-group-links" class="css-1isemmb"></div></div><div data-testid="nav-group" class="css-1ebprri"><div class="css-1c8kbwa">FHIR Examples<style data-emotion-css="1scp5x8">.css-1scp5x8{margin-left:4px;-webkit-flex-shrink:0;-ms-flex-negative:0;flex-shrink:0;-webkit-align-self:baseline;-ms-flex-item-align:baseline;align-self:baseline;-webkit-transform:rotateX(180deg);-ms-transform:rotateX(180deg);transform:rotateX(180deg);-webkit-transform-origin:center;-ms-transform-origin:center;transform-origin:center;-webkit-transition:-webkit-transform .3s ease-in-out;-webkit-transition:transform .3s ease-in-out;transition:transform .3s ease-in-out;}</style><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="css-1scp5x8"><polyline points="6 9 12 15 18 9"></polyline></svg></div><div data-testid="nav-group-links" class="css-1isemmb"><a class="css-1rqvyud" href="/fhir-ui/examples/fhir-examples/allergies">Allergies</a><a class="css-1rqvyud" href="/fhir-ui/examples/fhir-examples/conditions">Conditions</a><a aria-current="page" class="css-1rqvyud active" href="/fhir-ui/examples/fhir-examples/medications">Medications</a><a class="css-1rqvyud" href="/fhir-ui/examples/fhir-examples/observation">Observation</a><a class="css-1rqvyud" href="/fhir-ui/examples/fhir-examples/observations">Observations</a><a class="css-1rqvyud" href="/fhir-ui/examples/fhir-examples/patient">Patient</a><a class="css-1rqvyud" href="/fhir-ui/examples/fhir-examples/patient-bundle">Patient Bundle</a><a class="css-1rqvyud" href="/fhir-ui/examples/fhir-examples/patients">Patients</a></div></div></div><style data-emotion-css="1w3d2mg">.css-1w3d2mg{background-color:var(--theme-ui-colors-background,#FFFFFF);position:relative;max-width:1280px;padding-top:48px;padding-bottom:48px;padding-left:32px;padding-right:32px;padding:32px;}@media screen and (max-width:57.5em){.css-1w3d2mg{padding-top:48px;padding-bottom:32px;padding-left:32px;padding-right:32px;}}</style><style data-emotion-css="kjtkh5">.css-kjtkh5{width:100%;min-width:0;max-width:1280px;margin-left:auto;margin-right:auto;padding:32px;background-color:var(--theme-ui-colors-background,#FFFFFF);position:relative;max-width:1280px;padding-top:48px;padding-bottom:48px;padding-left:32px;padding-right:32px;padding:32px;}@media screen and (max-width:57.5em){.css-kjtkh5{padding-top:48px;padding-bottom:32px;padding-left:32px;padding-right:32px;}}</style><style data-emotion-css="1307vk3">.css-1307vk3{box-sizing:border-box;min-width:0;width:100%;min-width:0;max-width:1280px;margin-left:auto;margin-right:auto;padding:32px;background-color:var(--theme-ui-colors-background,#FFFFFF);position:relative;max-width:1280px;padding-top:48px;padding-bottom:48px;padding-left:32px;padding-right:32px;padding:32px;}@media screen and (max-width:57.5em){.css-1307vk3{padding-top:48px;padding-bottom:32px;padding-left:32px;padding-right:32px;}}</style><div data-testid="main-container" class="css-1307vk3"><style data-emotion-css="1vci3bl">.css-1vci3bl{padding:0;margin:0;margin-bottom:16px;font-size:48px;font-family:'Source Sans Pro',sans-serif;line-height:1.125;font-weight:700;}</style><h1 id="array-of-medication-fhir-resources" class="css-1vci3bl">Array of Medication FHIR Resources</h1><div style="position:relative;user-select:auto;margin:0;margin-right:auto;width:100%;height:auto;max-width:100%;min-width:260px;box-sizing:border-box;flex-shrink:0" data-testid="playground"><style data-emotion-css="79elbk">.css-79elbk{position:relative;}</style><div class="css-79elbk"><style data-emotion-css="nxr1xe">.css-nxr1xe{height:auto;display:block;min-height:100%;width:calc(100% - 2px);background-color:var(--theme-ui-colors-playground-bg,#FFFFFF);border:1px solid var(--theme-ui-colors-playground-border,#CED4DE);border-radius:4px 4px 0 0;}</style><div class="css-nxr1xe"><div style="m:0;p:20px" data-testid="live-preview"><pre>[
+  {
+    &quot;resourceType&quot;: &quot;Medication&quot;,
+    &quot;id&quot;: &quot;med0314&quot;,
+    &quot;text&quot;: {
+      &quot;status&quot;: &quot;generated&quot;,
+      &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: med0314&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Alprazolam 0.25mg Oral Tablet &lt;span&gt;(Details : {RxNorm code &#x27;308047&#x27; = &#x27;ALPRAZolam 0.25 MG Oral Tablet&#x27;, given as &#x27;Alprazolam 0.25mg Oral Tablet&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;form&lt;/b&gt;: Tablet dose form (qualifier value) &lt;span&gt;(Details : {SNOMED CT code &#x27;385055001&#x27; = &#x27;Tablet&#x27;, given as &#x27;Tablet dose form (qualifier value)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;Ingredients&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Item[x]&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Strength&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Alprazolam (substance) &lt;span&gt;(Details : {SNOMED CT code &#x27;386983007&#x27; = &#x27;Alprazolam&#x27;, given as &#x27;Alprazolam (substance)&#x27;})&lt;/span&gt;&lt;/td&gt;&lt;td&gt;0.25 mg&lt;span&gt; (Details: UCUM code mg = &#x27;mg&#x27;)&lt;/span&gt;/1 Tablet&lt;span&gt; (Details: SNOMED CT code 385055001 = &#x27;Tablet&#x27;)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+    },
+    &quot;code&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;308047&quot;,
+          &quot;display&quot;: &quot;Alprazolam 0.25mg Oral Tablet&quot;
+        }
+      ]
+    },
+    &quot;form&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;385055001&quot;,
+          &quot;display&quot;: &quot;Tablet dose form (qualifier value)&quot;
+        }
+      ]
+    },
+    &quot;ingredient&quot;: [
+      {
+        &quot;itemCodeableConcept&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;386983007&quot;,
+              &quot;display&quot;: &quot;Alprazolam (substance)&quot;
+            }
+          ]
+        },
+        &quot;strength&quot;: {
+          &quot;numerator&quot;: {
+            &quot;value&quot;: 0.25,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mg&quot;
+          },
+          &quot;denominator&quot;: {
+            &quot;value&quot;: 1,
+            &quot;unit&quot;: &quot;Tablet&quot;,
+            &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+            &quot;code&quot;: &quot;385055001&quot;
+          }
+        }
+      }
+    ]
+  },
+  {
+    &quot;resourceType&quot;: &quot;Medication&quot;,
+    &quot;id&quot;: &quot;med0310&quot;,
+    &quot;text&quot;: {
+      &quot;status&quot;: &quot;generated&quot;,
+      &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: med0310&lt;/p&gt;&lt;p&gt;&lt;b&gt;contained&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Oral Form Oxycodone (product) &lt;span&gt;(Details : {SNOMED CT code &#x27;430127000&#x27; = &#x27;Oral form oxycodone&#x27;, given as &#x27;Oral Form Oxycodone (product)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;form&lt;/b&gt;: Tablet dose form (qualifier value) &lt;span&gt;(Details : {SNOMED CT code &#x27;385055001&#x27; = &#x27;Tablet&#x27;, given as &#x27;Tablet dose form (qualifier value)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;Ingredients&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Item[x]&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Strength&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;id: sub03; Oxycodone (substance) &lt;span&gt;(Details : {SNOMED CT code &#x27;55452001&#x27; = &#x27;Oxycodone&#x27;, given as &#x27;Oxycodone (substance)&#x27;})&lt;/span&gt;&lt;/td&gt;&lt;td&gt;5 mg&lt;span&gt; (Details: UCUM code mg = &#x27;mg&#x27;)&lt;/span&gt;/1 TAB&lt;span&gt; (Details: http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm code TAB = &#x27;Tablet&#x27;)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+    },
+    &quot;contained&quot;: [
+      {
+        &quot;resourceType&quot;: &quot;Substance&quot;,
+        &quot;id&quot;: &quot;sub03&quot;,
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;55452001&quot;,
+              &quot;display&quot;: &quot;Oxycodone (substance)&quot;
+            }
+          ]
+        }
+      }
+    ],
+    &quot;code&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;430127000&quot;,
+          &quot;display&quot;: &quot;Oral Form Oxycodone (product)&quot;
+        }
+      ]
+    },
+    &quot;form&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;385055001&quot;,
+          &quot;display&quot;: &quot;Tablet dose form (qualifier value)&quot;
+        }
+      ]
+    },
+    &quot;ingredient&quot;: [
+      {
+        &quot;itemReference&quot;: {
+          &quot;reference&quot;: &quot;#sub03&quot;
+        },
+        &quot;strength&quot;: {
+          &quot;numerator&quot;: {
+            &quot;value&quot;: 5,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mg&quot;
+          },
+          &quot;denominator&quot;: {
+            &quot;value&quot;: 1,
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm&quot;,
+            &quot;code&quot;: &quot;TAB&quot;
+          }
+        }
+      }
+    ]
+  },
+  {
+    &quot;resourceType&quot;: &quot;Medication&quot;,
+    &quot;id&quot;: &quot;med0311&quot;,
+    &quot;text&quot;: {
+      &quot;status&quot;: &quot;generated&quot;,
+      &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: med0311&lt;/p&gt;&lt;p&gt;&lt;b&gt;contained&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Prednisone 5mg tablet (Product) &lt;span&gt;(Details : {SNOMED CT code &#x27;373994007&#x27; = &#x27;Prednisone 5mg tablet&#x27;, given as &#x27;Prednisone 5mg tablet (Product)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;form&lt;/b&gt;: Tablet dose form (qualifier value) &lt;span&gt;(Details : {SNOMED CT code &#x27;385055001&#x27; = &#x27;Tablet&#x27;, given as &#x27;Tablet dose form (qualifier value)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;Ingredients&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Item[x]&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Strength&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;id: sub03; Prednisone (substance) &lt;span&gt;(Details : {SNOMED CT code &#x27;116602009&#x27; = &#x27;Prednisone&#x27;, given as &#x27;Prednisone (substance)&#x27;})&lt;/span&gt;&lt;/td&gt;&lt;td&gt;5 mg&lt;span&gt; (Details: UCUM code mg = &#x27;mg&#x27;)&lt;/span&gt;/1 TAB&lt;span&gt; (Details: http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm code TAB = &#x27;Tablet&#x27;)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+    },
+    &quot;contained&quot;: [
+      {
+        &quot;resourceType&quot;: &quot;Substance&quot;,
+        &quot;id&quot;: &quot;sub03&quot;,
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;116602009&quot;,
+              &quot;display&quot;: &quot;Prednisone (substance)&quot;
+            }
+          ]
+        }
+      }
+    ],
+    &quot;code&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;373994007&quot;,
+          &quot;display&quot;: &quot;Prednisone 5mg tablet (Product)&quot;
+        }
+      ]
+    },
+    &quot;form&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;385055001&quot;,
+          &quot;display&quot;: &quot;Tablet dose form (qualifier value)&quot;
+        }
+      ]
+    },
+    &quot;ingredient&quot;: [
+      {
+        &quot;itemReference&quot;: {
+          &quot;reference&quot;: &quot;#sub03&quot;
+        },
+        &quot;strength&quot;: {
+          &quot;numerator&quot;: {
+            &quot;value&quot;: 5,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mg&quot;
+          },
+          &quot;denominator&quot;: {
+            &quot;value&quot;: 1,
+            &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/v3-orderableDrugForm&quot;,
+            &quot;code&quot;: &quot;TAB&quot;
+          }
+        }
+      }
+    ]
+  },
+  {
+    &quot;resourceType&quot;: &quot;Medication&quot;,
+    &quot;id&quot;: &quot;med0315&quot;,
+    &quot;text&quot;: {
+      &quot;status&quot;: &quot;generated&quot;,
+      &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: med0315&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Mometasone Furoate 0.05mg/Actuat &lt;span&gt;(Details : {RxNorm code &#x27;358793&#x27; = &#x27;mometasone furoate 0.05 MG/ACTUAT&#x27;, given as &#x27;Mometasone Furoate 0.05mg/Actuat&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;form&lt;/b&gt;: Nasal Spray &lt;span&gt;(Details : {SNOMED CT code &#x27;385157007&#x27; = &#x27;Nasal spray&#x27;, given as &#x27;Nasal Spray&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&quot;
+    },
+    &quot;code&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://www.nlm.nih.gov/research/umls/rxnorm&quot;,
+          &quot;code&quot;: &quot;358793&quot;,
+          &quot;display&quot;: &quot;Mometasone Furoate 0.05mg/Actuat&quot;
+        }
+      ]
+    },
+    &quot;form&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;385157007&quot;,
+          &quot;display&quot;: &quot;Nasal Spray&quot;
+        }
+      ]
+    }
+  },
+  {
+    &quot;resourceType&quot;: &quot;Medication&quot;,
+    &quot;id&quot;: &quot;med0313&quot;,
+    &quot;text&quot;: {
+      &quot;status&quot;: &quot;generated&quot;,
+      &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: med0313&lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Lorazepam 2mg/ml injection solution 1ml vial (product) &lt;span&gt;(Details : {SNOMED CT code &#x27;400621001&#x27; = &#x27;Lorazepam 2mg/mL injection solution 1mL vial&#x27;, given as &#x27;Lorazepam 2mg/ml injection solution 1ml vial (product)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;form&lt;/b&gt;: Injection solution (qualifier value) &lt;span&gt;(Details : {SNOMED CT code &#x27;385219001&#x27; = &#x27;Injection solution&#x27;, given as &#x27;Injection solution (qualifier value)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;amount&lt;/b&gt;: 1 ml&lt;span&gt; (Details: UCUM code ml = &#x27;ml&#x27;)&lt;/span&gt;/1 vial&lt;span&gt; (Details: http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type code vial = &#x27;Vial&#x27;)&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;Ingredients&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Item[x]&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Strength&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;Lorazepam (substance) &lt;span&gt;(Details : {SNOMED CT code &#x27;387106007&#x27; = &#x27;Lorazepam&#x27;, given as &#x27;Lorazepam (substance)&#x27;})&lt;/span&gt;&lt;/td&gt;&lt;td&gt;2 mg&lt;span&gt; (Details: UCUM code mg = &#x27;mg&#x27;)&lt;/span&gt;/1 mL&lt;span&gt; (Details: UCUM code mL = &#x27;mL&#x27;)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+    },
+    &quot;code&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;400621001&quot;,
+          &quot;display&quot;: &quot;Lorazepam 2mg/ml injection solution 1ml vial (product)&quot;
+        }
+      ]
+    },
+    &quot;form&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;385219001&quot;,
+          &quot;display&quot;: &quot;Injection solution (qualifier value)&quot;
+        }
+      ]
+    },
+    &quot;amount&quot;: {
+      &quot;numerator&quot;: {
+        &quot;value&quot;: 1,
+        &quot;unit&quot;: &quot;ml&quot;,
+        &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+        &quot;code&quot;: &quot;ml&quot;
+      },
+      &quot;denominator&quot;: {
+        &quot;value&quot;: 1,
+        &quot;system&quot;: &quot;http://terminology.hl7.org/CodeSystem/medicationknowledge-package-type&quot;,
+        &quot;code&quot;: &quot;vial&quot;
+      }
+    },
+    &quot;ingredient&quot;: [
+      {
+        &quot;itemCodeableConcept&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;387106007&quot;,
+              &quot;display&quot;: &quot;Lorazepam (substance)&quot;
+            }
+          ]
+        },
+        &quot;strength&quot;: {
+          &quot;numerator&quot;: {
+            &quot;value&quot;: 2,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mg&quot;
+          },
+          &quot;denominator&quot;: {
+            &quot;value&quot;: 1,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mL&quot;
+          }
+        }
+      }
+    ]
+  },
+  {
+    &quot;resourceType&quot;: &quot;Medication&quot;,
+    &quot;id&quot;: &quot;med0312&quot;,
+    &quot;text&quot;: {
+      &quot;status&quot;: &quot;generated&quot;,
+      &quot;div&quot;: &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative with Details&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;id&lt;/b&gt;: med0312&lt;/p&gt;&lt;p&gt;&lt;b&gt;contained&lt;/b&gt;: &lt;/p&gt;&lt;p&gt;&lt;b&gt;code&lt;/b&gt;: Nystatin 100,000 units/ml oral suspension (product) &lt;span&gt;(Details : {SNOMED CT code &#x27;324689003&#x27; = &#x27;Nystatin 100,000units/mL oral suspension&#x27;, given as &#x27;Nystatin 100,000 units/ml oral suspension (product)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;form&lt;/b&gt;: Oral suspension (qualifier value) &lt;span&gt;(Details : {SNOMED CT code &#x27;387048002&#x27; = &#x27;Nystatin&#x27;, given as &#x27;Oral suspension (qualifier value)&#x27;})&lt;/span&gt;&lt;/p&gt;&lt;h3&gt;Ingredients&lt;/h3&gt;&lt;table&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Item[x]&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Strength&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;id: sub02; Nystatin (substance) &lt;span&gt;(Details : {SNOMED CT code &#x27;387048002&#x27; = &#x27;Nystatin&#x27;, given as &#x27;Nystatin (substance)&#x27;})&lt;/span&gt;&lt;/td&gt;&lt;td&gt;100000 [IU]&lt;span&gt; (Details: UCUM code [IU] = &#x27;IU&#x27;)&lt;/span&gt;/1 mL&lt;span&gt; (Details: UCUM code mL = &#x27;mL&#x27;)&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;&quot;
+    },
+    &quot;contained&quot;: [
+      {
+        &quot;resourceType&quot;: &quot;Substance&quot;,
+        &quot;id&quot;: &quot;sub02&quot;,
+        &quot;code&quot;: {
+          &quot;coding&quot;: [
+            {
+              &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+              &quot;code&quot;: &quot;387048002&quot;,
+              &quot;display&quot;: &quot;Nystatin (substance)&quot;
+            }
+          ]
+        }
+      }
+    ],
+    &quot;code&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;324689003&quot;,
+          &quot;display&quot;: &quot;Nystatin 100,000 units/ml oral suspension (product)&quot;
+        }
+      ]
+    },
+    &quot;form&quot;: {
+      &quot;coding&quot;: [
+        {
+          &quot;system&quot;: &quot;http://snomed.info/sct&quot;,
+          &quot;code&quot;: &quot;387048002&quot;,
+          &quot;display&quot;: &quot;Oral suspension (qualifier value)&quot;
+        }
+      ]
+    },
+    &quot;ingredient&quot;: [
+      {
+        &quot;itemReference&quot;: {
+          &quot;reference&quot;: &quot;#sub02&quot;
+        },
+        &quot;strength&quot;: {
+          &quot;numerator&quot;: {
+            &quot;value&quot;: 100000,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;[IU]&quot;
+          },
+          &quot;denominator&quot;: {
+            &quot;value&quot;: 1,
+            &quot;system&quot;: &quot;http://unitsofmeasure.org&quot;,
+            &quot;code&quot;: &quot;mL&quot;
+          }
+        }
+      }
+    ]
+  }
+]</pre></div><div></div></div><style data-emotion-css="4qwwu">.css-4qwwu{z-index:9;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;position:absolute;bottom:-20px;right:32px;}</style><div class="css-4qwwu"><style data-emotion-css="1ounbqd">.css-1ounbqd{padding:8px;outline:none;background:transparent;border:none;display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-align-items:center;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-top:4px;padding-bottom:4px;background-color:var(--theme-ui-colors-border,#CED4DE);color:var(--theme-ui-colors-muted,#67788a);border-radius:0 0 3px 3px;}.css-1ounbqd:hover{cursor:pointer;}.css-1ounbqd ~ .css-1ounbqd{margin-left:4px;}</style><button class="css-1ounbqd"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect></svg></button><button class="css-1ounbqd"><svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg></button></div></div><div class="css-nxr1xe"><div style="p:2px;border:t =&gt; `1px solid ${t.colors.border}`;border-radius:0 0 4px 4px;background:#f6f8fa;border-top:0;font-family:monospace;font-size:18px;* &gt; textarea:focus:[object Object]"><div data-testid="live-editor" style="position:relative;text-align:left;box-sizing:border-box;padding:0;overflow:hidden;white-space:pre;font-family:Inconsolata;color:#393A34;background-color:#f6f8fa"><textarea style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:absolute;top:0;left:0;height:100%;width:100%;resize:none;color:inherit;overflow:hidden;-moz-osx-font-smoothing:grayscale;-webkit-font-smoothing:antialiased;-webkit-text-fill-color:transparent;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px" class="npm__react-simple-code-editor__textarea" autoCapitalize="off" autoComplete="off" autoCorrect="off" spellcheck="false" data-gramm="false">&lt;pre&gt;{JSON.stringify(medications, null, 2)}&lt;/pre&gt;</textarea><pre aria-hidden="true" style="margin:0;border:0;background:none;box-sizing:inherit;display:inherit;font-family:inherit;font-size:inherit;font-style:inherit;font-variant-ligatures:inherit;font-weight:inherit;letter-spacing:inherit;line-height:inherit;tab-size:inherit;text-indent:inherit;text-rendering:inherit;text-transform:inherit;white-space:pre-wrap;word-break:keep-all;overflow-wrap:break-word;position:relative;pointer-events:none;padding-top:10px;padding-right:10px;padding-bottom:10px;padding-left:10px"><div class="token-line" style="font-family:Inconsolata;color:#393A34"><span class="token tag punctuation" style="color:#393A34">&lt;</span><span class="token tag" style="color:#00009f">pre</span><span class="token tag punctuation" style="color:#393A34">&gt;</span><span class="token punctuation" style="color:#393A34">{</span><span class="token constant" style="color:#36acaa">JSON</span><span class="token punctuation" style="color:#393A34">.</span><span class="token function" style="color:#d73a49">stringify</span><span class="token punctuation" style="color:#393A34">(</span><span class="token plain">medications</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token keyword" style="color:#00009f">null</span><span class="token punctuation" style="color:#393A34">,</span><span class="token plain"> </span><span class="token number" style="color:#36acaa">2</span><span class="token punctuation" style="color:#393A34">)</span><span class="token punctuation" style="color:#393A34">}</span><span class="token tag punctuation" style="color:#393A34">&lt;/</span><span class="token tag" style="color:#00009f">pre</span><span class="token tag punctuation" style="color:#393A34">&gt;</span></div></pre><style type="text/css">
+/**
+ * Reset the text fill color so that placeholder is visible
+ */
+.npm__react-simple-code-editor__textarea:empty {
+  -webkit-text-fill-color: inherit !important;
+}
+
+/**
+ * Hack to apply on some CSS on IE10 and IE11
+ */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  /**
+    * IE doesn't support '-webkit-text-fill-color'
+    * So we use 'color: transparent' to make the text transparent on IE
+    * Unlike other browsers, it doesn't affect caret color in IE
+    */
+  .npm__react-simple-code-editor__textarea {
+    color: transparent !important;
+  }
+
+  .npm__react-simple-code-editor__textarea::selection {
+    background-color: #accef7 !important;
+    color: transparent !important;
+  }
+}
+</style></div></div><div></div></div><style data-emotion-css="1d408uj">.css-1d408uj{margin:0;padding-top:8px;padding-bottom:8px;padding-left:16px;padding-right:16px;background-color:#FF4757;font-size:14px;color:var(--theme-ui-colors-white,#FFFFFF);}</style><span><div class="" style="position:absolute;user-select:none;width:10px;height:100%;top:0px;right:-5px;cursor:col-resize"></div></span></div></div></div></main></div></div></div></div><script id="gatsby-script-loader">/*<![CDATA[*/window.pagePath="/examples/fhir-examples/medications";/*]]>*/</script><script id="gatsby-chunk-mapping">/*<![CDATA[*/window.___chunkMapping={"app":["/app-53d074dc23f3d22f94ba.js"],"component---src-index-mdx":["/component---src-index-mdx-4905c86eea643f821cdc.js"],"component---src-examples-allergies-example-mdx":["/component---src-examples-allergies-example-mdx-e6fc346111f1254e0a90.js"],"component---src-examples-condition-example-mdx":["/component---src-examples-condition-example-mdx-a4482dd9042b32f53553.js"],"component---src-examples-medications-example-mdx":["/component---src-examples-medications-example-mdx-a4495629be3e0d981f00.js"],"component---src-examples-observation-example-mdx":["/component---src-examples-observation-example-mdx-8421b3de1e0e78c09331.js"],"component---src-examples-observations-example-mdx":["/component---src-examples-observations-example-mdx-fd1131a89b883d3cec78.js"],"component---src-examples-patient-bundle-example-mdx":["/component---src-examples-patient-bundle-example-mdx-8b2dbb6ee1de5fce45f2.js"],"component---src-examples-patient-example-mdx":["/component---src-examples-patient-example-mdx-713fa35606bc1f260ec9.js"],"component---src-components-allergy-allergy-table-mdx":["/component---src-components-allergy-allergy-table-mdx-15d37c3a51e88b5534b2.js"],"component---src-examples-patients-example-mdx":["/component---src-examples-patients-example-mdx-daaab7c66bba14764304.js"],"component---src-components-medication-medication-table-mdx":["/component---src-components-medication-medication-table-mdx-ef601e405a9bbe0564fa.js"],"component---src-components-condition-condition-table-mdx":["/component---src-components-condition-condition-table-mdx-fe12de77c4604c58704a.js"],"component---src-components-observation-observation-detail-mdx":["/component---src-components-observation-observation-detail-mdx-892e3e7520918b4e37c0.js"],"component---src-components-observation-observation-table-mdx":["/component---src-components-observation-observation-table-mdx-a8701ddd4e58d7c7e6a3.js"],"component---src-components-patient-patient-banner-mdx":["/component---src-components-patient-patient-banner-mdx-88c81ce468db297161a1.js"],"component---src-components-patient-patient-card-mdx":["/component---src-components-patient-patient-card-mdx-8bbfb298486b8e1eb3fd.js"],"component---src-components-patient-patient-detail-mdx":["/component---src-components-patient-patient-detail-mdx-6c42078552de82fab65e.js"],"component---src-components-patient-patient-table-mdx":["/component---src-components-patient-patient-table-mdx-4164076e3182f178828b.js"],"component---src-pages-404-js":["/component---src-pages-404-js-4268445316d63ba3b2b4.js"]};/*]]>*/</script><script src="/fhir-ui/component---src-examples-medications-example-mdx-a4495629be3e0d981f00.js" async=""></script><script src="/fhir-ui/commons-48e90f3ddb230b9fc3de.js" async=""></script><script src="/fhir-ui/app-53d074dc23f3d22f94ba.js" async=""></script><script src="/fhir-ui/styles-a31cf4910fe92505c124.js" async=""></script><script src="/fhir-ui/webpack-runtime-f6654912f826385cce3b.js" async=""></script></body></html>
