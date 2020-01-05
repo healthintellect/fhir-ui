@@ -1,0 +1,35 @@
+---
+name: MedicationTable
+menu: Components
+route: /components/medication/MedicationTable
+---
+
+import { Playground, Props } from 'docz'
+import { Container, Grid } from '@material-ui/core'
+import MedicationTable from './MedicationTable'
+import { medications } from '../../examples/fhir-examples'
+
+# MedicationTable
+
+MedicationTable displays a material-ui table component when passed an array of FHIR Medication Resources using the medications property. Different styles of fields can be used as shown below.
+
+## Properties
+
+<Props of={MedicationTable} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <Grid container spacing={3} direction="row">
+      <Grid item xs={12}>
+        <MedicationTable
+          medications={medications}
+          tableTitle="Medication List"
+          tableSize="medium"
+          hideCheckboxes={true}
+        />
+      </Grid>
+    </Grid>
+  </Container>
+</Playground>

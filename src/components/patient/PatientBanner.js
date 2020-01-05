@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import { Grid, TextField, Card, Paper, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import moment from 'moment'
-import CustomDatePicker from '../CustomDatePicker'
+import CustomDatePicker from '../table/CustomDatePicker'
 
 const PatientBanner = ({ patient, detailLink, fieldVariant }) => {
   const useStyles = makeStyles(theme => ({

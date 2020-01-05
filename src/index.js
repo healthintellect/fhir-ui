@@ -4,6 +4,9 @@ import PatientDetail from './components/patient/PatientDetail'
 import PatientBanner from './components/patient/PatientBanner'
 import ObservationTable from './components/observation/ObservationTable'
 import ObservationDetail from './components/observation/ObservationDetail'
+import AllergyTable from './components/allergy/AllergyTable'
+import ConditionTable from './components/condition/ConditionTable'
+import MedicationTable from './components/medication/MedicationTable'
 
 export {
   PatientCard,
@@ -12,4 +15,7 @@ export {
   PatientBanner,
   ObservationTable,
   ObservationDetail,
+  AllergyTable,
+  ConditionTable,
+  MedicationTable,
 }

@@ -4,7 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ### [Unreleased][unreleased]
 
-### [v0.4.1][2019-12-31]
+- Add MedicationTable component and documentation
+- Add AllergyTable component and documentation
+- Add ConditionTable component and documentation
+- Modify table title on PaientTable
+- Added defaultRowsPerPage property to PatientTable
+- Added example FHIR patient bundle
+
+### [v0.4.2][2019-12-31]
 
 - Add PatientBanner component and documentation
 

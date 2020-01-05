@@ -17,7 +17,7 @@ import {
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import moment from 'moment'
-import CustomDatePicker from '../CustomDatePicker'
+import CustomDatePicker from '../table/CustomDatePicker'
 import { observations } from '../../examples/fhir-examples'
 
 const useStyles = makeStyles(theme => ({

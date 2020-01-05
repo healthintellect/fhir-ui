@@ -1,0 +1,36 @@
+---
+name: AllergyTable
+menu: Components
+route: /components/allergy/AllergyTable
+---
+
+import { Playground, Props } from 'docz'
+import { Container, Grid } from '@material-ui/core'
+import AllergyTable from './AllergyTable'
+import { allergies } from '../../examples/fhir-examples'
+
+# AllergyTable
+
+AllergyTable displays a material-ui table component when passed an array of FHIR Allergy Resources using the allergies property. Different styles of fields can be used as shown below.
+
+## Properties
+
+<Props of={AllergyTable} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <Grid container spacing={3} direction="row">
+      <Grid item xs={12}>
+        <AllergyTable
+          allergies={allergies}
+          tableTitle="Allergy List"
+          tableSize="small"
+          hideActionIcons={true}
+          hideCheckboxes={true}
+        />
+      </Grid>
+    </Grid>
+  </Container>
+</Playground>

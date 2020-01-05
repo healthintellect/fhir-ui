@@ -19,10 +19,8 @@ import {
   FormControlLabel,
   Switch,
 } from '@material-ui/core'
-import {
-  Delete as DeleteIcon,
-  FilterList as FilterListIcon,
-} from '@material-ui/icons'
+import TableHeader from '../table/TableHeader'
+import TableToolbar from '../table/TableToolbar'
 
 const desc = (a, b, orderBy) => {
   if (b[orderBy] < a[orderBy]) {
@@ -64,137 +62,16 @@ const headCells = [
     label: 'Patient Name',
   },
   { id: 'dob', numeric: false, disablePadding: false, label: 'Date of Birth' },
-  { id: 'gender', numeric: true, disablePadding: false, label: 'Gender' },
-  { id: 'phone', numeric: true, disablePadding: false, label: 'Phone' },
-  { id: 'language', numeric: true, disablePadding: false, label: 'Language' },
+  { id: 'gender', numeric: false, disablePadding: false, label: 'Gender' },
+  { id: 'phone', numeric: false, disablePadding: false, label: 'Phone' },
+  { id: 'language', numeric: false, disablePadding: false, label: 'Language' },
+  {
+    id: 'organization',
+    numeric: false,
+    disablePadding: false,
+    label: 'Organization',
+  },
 ]
-
-const PatientTableHead = props => {
-  const {
-    classes,
-    onSelectAllClick,
-    order,
-    orderBy,
-    numSelected,
-    rowCount,
-    onRequestSort,
-  } = props
-  const createSortHandler = property => event => {
-    onRequestSort(event, property)
-  }
-
-  return (
-    <TableHead>
-      <TableRow>
-        <TableCell padding="checkbox">
-          <Checkbox
-            indeterminate={numSelected > 0 && numSelected < rowCount}
-            checked={numSelected === rowCount}
-            onChange={onSelectAllClick}
-            inputProps={{ 'aria-label': 'select all patients' }}
-          />
-        </TableCell>
-        {headCells.map(headCell => (
-          <TableCell
-            key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
-            padding={headCell.disablePadding ? 'none' : 'default'}
-            sortDirection={orderBy === headCell.id ? order : false}
-          >
-            <TableSortLabel
-              active={orderBy === headCell.id}
-              direction={order}
-              onClick={createSortHandler(headCell.id)}
-            >
-              {headCell.label}
-              {orderBy === headCell.id ? (
-                <span className={classes.visuallyHidden}>
-                  {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-                </span>
-              ) : null}
-            </TableSortLabel>
-          </TableCell>
-        ))}
-      </TableRow>
-    </TableHead>
-  )
-}
-
-PatientTableHead.propTypes = {
-  classes: PropTypes.object.isRequired,
-  numSelected: PropTypes.number.isRequired,
-  onRequestSort: PropTypes.func.isRequired,
-  onSelectAllClick: PropTypes.func.isRequired,
-  order: PropTypes.oneOf(['asc', 'desc']).isRequired,
-  orderBy: PropTypes.string.isRequired,
-  rowCount: PropTypes.number.isRequired,
-}
-
-const useToolbarStyles = makeStyles(theme => ({
-  root: {
-    paddingLeft: theme.spacing(2),
-    paddingRight: theme.spacing(1),
-  },
-  highlight:
-    theme.palette.type === 'light'
-      ? {
-          color: theme.palette.secondary.main,
-          backgroundColor: lighten(theme.palette.secondary.light, 0.85),
-        }
-      : {
-          color: theme.palette.text.primary,
-          backgroundColor: theme.palette.secondary.dark,
-        },
-  title: {
-    flex: '1 1 100%',
-  },
-}))
-
-const PatientTableToolbar = props => {
-  const classes = useToolbarStyles()
-  const { numSelected, tableTitle } = props
-
-  return (
-    <Toolbar
-      className={clsx(classes.root, {
-        [classes.highlight]: numSelected > 0,
-      })}
-    >
-      {numSelected > 0 ? (
-        <Typography
-          className={classes.title}
-          color="inherit"
-          variant="subtitle1"
-        >
-          {numSelected} selected
-        </Typography>
-      ) : (
-        <Typography className={classes.title} variant="h6" id="tableTitle">
-          {tableTitle}
-        </Typography>
-      )}
-
-      {numSelected > 0 ? (
-        <Tooltip title="Delete">
-          <IconButton aria-label="delete">
-            <DeleteIcon />
-          </IconButton>
-        </Tooltip>
-      ) : (
-        <Tooltip title="Filter list">
-          <IconButton aria-label="filter list">
-            <FilterListIcon />
-          </IconButton>
-        </Tooltip>
-      )}
-    </Toolbar>
-  )
-}
-
-PatientTableToolbar.propTypes = {
-  numSelected: PropTypes.number.isRequired,
-  tableTitle: PropTypes.string,
-}
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -211,24 +88,15 @@ const useStyles = makeStyles(theme => ({
   tableWrapper: {
     overflowX: 'auto',
   },
-  visuallyHidden: {
-    border: 0,
-    clip: 'rect(0 0 0 0)',
-    height: 1,
-    margin: -1,
-    overflow: 'hidden',
-    padding: 0,
-    position: 'absolute',
-    top: 20,
-    width: 1,
-  },
 }))
 
 const PatientTable = ({
   patients = [],
+  onRemoveRecord,
   tableTitle,
   tableSize,
   stickyHeader,
+  defaultRowsPerPage,
 }) => {
   const classes = useStyles()
   const [order, setOrder] = React.useState('asc')
@@ -236,7 +104,7 @@ const PatientTable = ({
   const [selected, setSelected] = React.useState([])
   const [page, setPage] = React.useState(0)
   const [dense, setDense] = React.useState(false)
-  const [rowsPerPage, setRowsPerPage] = React.useState(5)
+  const [rowsPerPage, setRowsPerPage] = React.useState(defaultRowsPerPage || 5)
 
   const handleRequestSort = (event, property) => {
     const isDesc = orderBy === property && order === 'desc'
@@ -246,7 +114,7 @@ const PatientTable = ({
 
   const handleSelectAllClick = event => {
     if (event.target.checked) {
-      const newSelecteds = patients.map(n => n.patientId)
+      const newSelecteds = patients.map(n => n.id)
       setSelected(newSelecteds)
       return
     }
@@ -282,10 +150,6 @@ const PatientTable = ({
     setPage(0)
   }
 
-  const handleChangeDense = event => {
-    setDense(event.target.checked)
-  }
-
   const isSelected = name => selected.indexOf(name) !== -1
 
   const emptyRows =
@@ -294,19 +158,19 @@ const PatientTable = ({
   return (
     <div className={classes.root}>
       <Paper className={classes.paper}>
-        <PatientTableToolbar
-          numSelected={selected.length}
-          tableTitle={tableTitle ? tableTitle : 'Patient List'}
+        <TableToolbar
+          selected={selected}
+          tableTitle={tableTitle}
+          onRemoveRecord={onRemoveRecord}
         />
         <div className={classes.tableWrapper}>
           <Table
             className={classes.table}
-            aria-labelledby="tableTitle"
             size={tableSize}
             stickyHeader={stickyHeader}
-            aria-label="patient table"
+            aria-label={tableTitle || 'patient-table'}
           >
-            <PatientTableHead
+            <TableHeader
               classes={classes}
               numSelected={selected.length}
               order={order}
@@ -314,22 +178,23 @@ const PatientTable = ({
               onSelectAllClick={handleSelectAllClick}
               onRequestSort={handleRequestSort}
               rowCount={patients.length}
+              headCells={headCells}
             />
             <TableBody>
               {stableSort(patients, getSorting(order, orderBy))
                 .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
                 .map((row, index) => {
-                  const isItemSelected = isSelected(row.name[0].text)
+                  const isItemSelected = isSelected(row.id)
                   const labelId = `enhanced-table-checkbox-${index}`
 
                   return (
                     <TableRow
                       hover
-                      onClick={event => handleClick(event, row.name[0].text)}
+                      onClick={event => handleClick(event, row.id)}
                       role="checkbox"
                       aria-checked={isItemSelected}
                       tabIndex={-1}
-                      key={row.name[0].text}
+                      key={row.id}
                       selected={isItemSelected}
                     >
                       <TableCell padding="checkbox">
@@ -345,17 +210,27 @@ const PatientTable = ({
                         scope="row"
                         padding="none"
                       >
-                        {row.name[0].text}
+                        {row.name[0].text
+                          ? row.name[0].text
+                          : `${row.name[0].given.join(' ')} ${
+                              row.name[0].family
+                            }`}
                       </TableCell>
                       <TableCell>{row.birthDate}</TableCell>
-                      <TableCell align="right">{row.gender}</TableCell>
-                      <TableCell align="right">
-                        {row.telecom
-                          .map(el => (el.system === 'phone' ? el.value : ''))
-                          .filter(el => !!el)}
+                      <TableCell>{row.gender}</TableCell>
+                      <TableCell>
+                        {Array.isArray(row.telecom) &&
+                          row.telecom
+                            .map(el => (el.system === 'phone' ? el.value : ''))
+                            .filter(el => !!el)}
                       </TableCell>
-                      <TableCell align="right">
-                        {row.communication[0].language.text}
+                      <TableCell>
+                        {Array.isArray(row.communication) &&
+                          row.communication[0].language.text}
+                      </TableCell>
+                      <TableCell>
+                        {row.managingOrganization &&
+                          row.managingOrganization.reference}
                       </TableCell>
                     </TableRow>
                   )
@@ -390,9 +265,11 @@ const PatientTable = ({
 
 PatientTable.propTypes = {
   patients: PropTypes.arrayOf(PropTypes.object).isRequired,
+  onRemoveRecord: PropTypes.func,
   tableTitle: PropTypes.string,
   tableSize: PropTypes.string,
   stickyHeader: PropTypes.string,
+  defaultRowsPerPage: PropTypes.number,
 }
 
 export default PatientTable

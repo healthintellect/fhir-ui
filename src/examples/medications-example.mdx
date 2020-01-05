@@ -1,0 +1,14 @@
+---
+name: Medications
+menu: FHIR Examples
+route: /examples/fhir-examples/medications
+---
+
+import { Playground, Props } from 'docz'
+import { medications } from '../examples/fhir-examples.js'
+
+# Array of Medication FHIR Resources
+
+<Playground>
+  <pre>{JSON.stringify(medications, null, 2)}</pre>
+</Playground>

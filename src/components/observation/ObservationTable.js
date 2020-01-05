@@ -9,6 +9,7 @@ import {
   TableHead,
   TableCell,
   TableBody,
+  Typography,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import moment from 'moment'
@@ -38,6 +39,9 @@ const useStyles = makeStyles({
     marginTop: 2,
     fontSize: '120%',
   },
+  tableTitle: {
+    margin: 9,
+  },
 })
 
 const ObservationTable = ({
@@ -55,6 +59,7 @@ const ObservationTable = ({
   hideCheckboxes,
   appWidth,
   observations,
+  tableTitle,
   stickyHeader,
   tableSize,
 }) => {
@@ -390,6 +395,11 @@ const ObservationTable = ({
 
   return (
     <Card>
+      {tableTitle && (
+        <Typography variant="h6" gutterBottom className={classes.tableTitle}>
+          {tableTitle}
+        </Typography>
+      )}
       <CardContent>
         <Table
           className={classes.table}
@@ -421,7 +431,6 @@ const ObservationTable = ({
 
 ObservationTable.propTypes = {
   observations: PropTypes.array,
-  paginationLimit: PropTypes.number,
   hideCode: PropTypes.bool,
   hideBarcodes: PropTypes.bool,
   hideSubjects: PropTypes.bool,

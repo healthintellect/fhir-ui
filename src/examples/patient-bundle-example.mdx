@@ -1,0 +1,14 @@
+---
+name: Patient Bundle
+menu: FHIR Examples
+route: /examples/fhir-examples/patient-bundle
+---
+
+import { Playground, Props } from 'docz'
+import { patientBundle } from '../examples/fhir-examples.js'
+
+# FHIR Bundle Resource of 12 patients
+
+<Playground>
+  <pre>{JSON.stringify(patientBundle, null, 2)}</pre>
+</Playground>

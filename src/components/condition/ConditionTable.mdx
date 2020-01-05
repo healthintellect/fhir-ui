@@ -1,0 +1,39 @@
+---
+name: ConditionTable
+menu: Components
+route: /components/condition/ConditionTable
+---
+
+import { Playground, Props } from 'docz'
+import { Container, Grid } from '@material-ui/core'
+import ConditionTable from './ConditionTable'
+import { conditions } from '../../examples/fhir-examples'
+
+# ConditionTable
+
+ConditionTable displays a material-ui table component when passed an array of FHIR Condition Resources using the conditions property. Different styles of fields can be used as shown below.
+
+## Properties
+
+<Props of={ConditionTable} />
+
+## Basic usage
+
+<Playground>
+  <Container>
+    <Grid container spacing={3} direction="row">
+      <Grid item xs={12}>
+        <ConditionTable
+          conditions={conditions}
+          tableTitle="Condition List"
+          tableSize="medium"
+          hideDevices={true}
+          hideCheckboxes={true}
+          hideRecordedDate={true}
+          hideEncounter={true}
+          hideVerificationStatus={true}
+        />
+      </Grid>
+    </Grid>
+  </Container>
+</Playground>

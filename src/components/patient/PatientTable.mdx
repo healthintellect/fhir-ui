@@ -8,7 +8,7 @@ import { Playground, Props } from 'docz'
 import { ThemeProvider } from '@material-ui/core/styles'
 import { Container, Grid } from '@material-ui/core'
 import PatientTable from './PatientTable'
-import { patients } from '../../examples/fhir-examples'
+import { patientBundle } from '../../examples/fhir-examples'
 
 # PatientTable
 
@@ -25,9 +25,10 @@ PatientTable displays a material-ui table component when passed an array of FHIR
     <Grid container spacing={3} direction="row">
       <Grid item xs={12}>
         <PatientTable
-          patients={patients}
+          patients={patientBundle.entry.map(pt => pt.resource)}
           tableTitle="Patient List"
           tableSize="small"
+          defaultRowsPerPage={10}
         />
       </Grid>
     </Grid>
