@@ -1,6 +1,6 @@
 {
   "name": "fhir-ui",
-  "version": "0.5.3",
+  "version": "0.5.4",
   "description": "React components to display HL7 FHIR data using Material-UI",
   "homepage": "https://healthintellect.github.io/fhir-ui",
   "bugs": {
