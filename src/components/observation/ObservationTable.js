@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import {
   Checkbox,
-  Card,
-  CardContent,
+  Paper,
   Table,
   TableRow,
   TableHead,
@@ -61,7 +60,8 @@ const ObservationTable = ({
   observations,
   tableTitle,
   stickyHeader,
-  tableSize,
+  tableRowSize,
+  tableHeight,
 }) => {
   const classes = useStyles()
   const [source, setSource] = useState([])
@@ -69,7 +69,7 @@ const ObservationTable = ({
 
   const flattenObservation = observation => {
     const result = {
-      _id: '',
+      id: '',
       meta: '',
       category: '',
       code: '',
@@ -86,7 +86,7 @@ const ObservationTable = ({
       unit: '',
     }
 
-    result._id = observation.id ? observation.id : observation._id
+    result.id = observation.id ? observation.id : observation.id
     result.category = observation.category?.text
       ? observation.category?.text
       : observation.category && observation.category[0]?.coding[0]?.display
@@ -147,9 +147,9 @@ const ObservationTable = ({
     }
     return style
   }
-  const rowClick = _id => {
+  const rowClick = id => {
     if (onRowClick) {
-      onRowClick(_id)
+      onRowClick(id)
     }
   }
 
@@ -169,17 +169,17 @@ const ObservationTable = ({
           />
           <DeleteIcon
             className={classes.iconStyle}
-            onClick={() => removeRecord(observation._id)}
+            onClick={() => removeRecord(observation.id)}
           />
         </TableCell>
       )
     }
   }
 
-  const removeRecord = _id => {
-    console.log('Remove observation ', _id)
+  const removeRecord = id => {
+    console.log('Remove observation ', id)
     if (onRemoveRecord) {
-      onRemoveRecord(_id)
+      onRemoveRecord(id)
     }
   }
 
@@ -343,7 +343,7 @@ const ObservationTable = ({
             <TableRow
               id="observationRow"
               key={j}
-              onClick={rowClick(observationsToRender[j]._id)}
+              onClick={rowClick(observationsToRender[j].id)}
             >
               {renderToggle()}
               {renderCategory(observationsToRender[j].category)}
@@ -360,7 +360,7 @@ const ObservationTable = ({
               <TableCell id="date">
                 {observationsToRender[j].effectiveDateTime}
               </TableCell>
-              {renderBarcode(observationsToRender[j]._id)}
+              {renderBarcode(observationsToRender[j].id)}
               {renderActionIcons(observationsToRender[j])}
             </TableRow>,
           )
@@ -369,7 +369,7 @@ const ObservationTable = ({
             <TableRow
               id="observationRow"
               key={j}
-              onClick={rowClick(observationsToRender[j]._id)}
+              onClick={rowClick(observationsToRender[j].id)}
             >
               {renderToggle()}
               {renderCategory(observationsToRender[j].category)}
@@ -383,7 +383,7 @@ const ObservationTable = ({
               <TableCell id="date">
                 {observationsToRender[j].effectiveDateTime}
               </TableCell>
-              {renderBarcode(observationsToRender[j]._id)}
+              {renderBarcode(observationsToRender[j].id)}
               {renderActionIcons(observationsToRender[j])}
             </TableRow>,
           )
@@ -394,17 +394,21 @@ const ObservationTable = ({
   }, [])
 
   return (
-    <Card>
+    <Fragment>
       {tableTitle && (
         <Typography variant="h6" gutterBottom className={classes.tableTitle}>
           {tableTitle}
         </Typography>
       )}
-      <CardContent>
+      <Paper
+        style={
+          tableHeight ? { maxHeight: tableHeight, overflow: 'auto' } : null
+        }
+      >
         <Table
           className={classes.table}
           aria-labelledby="observationTable"
-          size={tableSize}
+          size={tableRowSize}
           stickyHeader={stickyHeader}
           aria-label="Observation table"
         >
@@ -424,8 +428,8 @@ const ObservationTable = ({
           </TableHead>
           <TableBody>{tableRows}</TableBody>
         </Table>
-      </CardContent>
-    </Card>
+      </Paper>
+    </Fragment>
   )
 }
 
@@ -447,8 +451,9 @@ ObservationTable.propTypes = {
   onRemoveRecord: PropTypes.func,
   onActionButtonClick: PropTypes.func,
   actionButtonLabel: PropTypes.string,
-  tableSize: PropTypes.string,
+  tableRowSize: PropTypes.string,
   stickyHeader: PropTypes.string,
+  tableHeight: PropTypes.number,
 }
 
 export default ObservationTable

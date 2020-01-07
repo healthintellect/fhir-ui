@@ -26,8 +26,10 @@ MedicationTable displays a material-ui table component when passed an array of F
         <MedicationTable
           medications={medications}
           tableTitle="Medication List"
-          tableSize="medium"
+          tableRowSize="medium"
           hideCheckboxes={true}
+          stickyHeader={true}
+          tableHeight={360}
         />
       </Grid>
     </Grid>

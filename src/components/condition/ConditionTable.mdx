@@ -26,12 +26,14 @@ ConditionTable displays a material-ui table component when passed an array of FH
         <ConditionTable
           conditions={conditions}
           tableTitle="Condition List"
-          tableSize="medium"
+          tableRowSize="medium"
           hideDevices={true}
           hideCheckboxes={true}
           hideRecordedDate={true}
           hideEncounter={true}
           hideVerificationStatus={true}
+          stickyHeader={true}
+          tableHeight={360}
         />
       </Grid>
     </Grid>

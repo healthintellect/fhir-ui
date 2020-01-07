@@ -27,7 +27,7 @@ PatientTable displays a material-ui table component when passed an array of FHIR
         <PatientTable
           patients={patientBundle.entry.map(pt => pt.resource)}
           tableTitle="Patient List"
-          tableSize="small"
+          tableRowSize="small"
           defaultRowsPerPage={10}
         />
       </Grid>

@@ -4,10 +4,18 @@ All notable changes to this project will be documented in this file.
 
 ### [Unreleased][unreleased]
 
+### [v0.5.4][2020-01-06]
+
+- Add maxHeight and scrollable options to table components
+- Fix CodeText column heading on AllergyTable
+- Change tableSize to tableRowSize for all table components
+
+### [v0.5.0][2020-01-05]
+
 - Add MedicationTable component and documentation
 - Add AllergyTable component and documentation
 - Add ConditionTable component and documentation
-- Modify table title on PaientTable
+- Modify table title location on PaientTable
 - Added defaultRowsPerPage property to PatientTable
 - Added example FHIR patient bundle
 

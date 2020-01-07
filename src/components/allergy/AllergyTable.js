@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import {
   Checkbox,
-  Card,
-  CardContent,
+  Paper,
   Table,
   TableRow,
   TableHead,
@@ -62,8 +61,9 @@ const AllergyTable = ({
   onActionButtonClick,
   actionButtonLabel,
   tableTitle,
-  tableSize,
+  tableRowSize,
   stickyHeader,
+  tableHeight,
 }) => {
   const classes = useStyles()
   const [source, setSource] = useState([])
@@ -292,7 +292,7 @@ const AllergyTable = ({
 
   const renderCodeTextHeader = () => {
     if (!hideCode) {
-      return <TableCell id="code-header">Code</TableCell>
+      return <TableCell id="code-header">Code Text</TableCell>
     }
   }
 
@@ -407,17 +407,21 @@ const AllergyTable = ({
   }, [])
 
   return (
-    <Card>
+    <Fragment>
       {tableTitle && (
         <Typography variant="h6" gutterBottom className={classes.tableTitle}>
           {tableTitle}
         </Typography>
       )}
-      <CardContent>
+      <Paper
+        style={
+          tableHeight ? { maxHeight: tableHeight, overflow: 'auto' } : null
+        }
+      >
         <Table
           className={classes.table}
           aria-labelledby="allergyTable"
-          size={tableSize}
+          size={tableRowSize}
           stickyHeader={stickyHeader}
           aria-label="Allergy table"
         >
@@ -439,8 +443,8 @@ const AllergyTable = ({
           </TableHead>
           <TableBody>{tableRows}</TableBody>
         </Table>
-      </CardContent>
-    </Card>
+      </Paper>
+    </Fragment>
   )
 }
 
@@ -461,8 +465,9 @@ AllergyTable.propTypes = {
   onRemoveRecord: PropTypes.func,
   onActionButtonClick: PropTypes.func,
   actionButtonLabel: PropTypes.string,
-  tableSize: PropTypes.string,
+  tableRowSize: PropTypes.string,
   stickyHeader: PropTypes.string,
+  tableHeight: PropTypes.number,
 }
 
 export default AllergyTable

@@ -94,7 +94,8 @@ const PatientTable = ({
   patients = [],
   onRemoveRecord,
   tableTitle,
-  tableSize,
+  tableRowSize,
+  tableHeight,
   stickyHeader,
   defaultRowsPerPage,
 }) => {
@@ -166,7 +167,7 @@ const PatientTable = ({
         <div className={classes.tableWrapper}>
           <Table
             className={classes.table}
-            size={tableSize}
+            size={tableRowSize}
             stickyHeader={stickyHeader}
             aria-label={tableTitle || 'patient-table'}
           >
@@ -267,7 +268,8 @@ PatientTable.propTypes = {
   patients: PropTypes.arrayOf(PropTypes.object).isRequired,
   onRemoveRecord: PropTypes.func,
   tableTitle: PropTypes.string,
-  tableSize: PropTypes.string,
+  tableRowSize: PropTypes.string,
+  tableHeight: PropTypes.number,
   stickyHeader: PropTypes.string,
   defaultRowsPerPage: PropTypes.number,
 }

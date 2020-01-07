@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import {
   Checkbox,
-  Card,
-  CardContent,
+  Paper,
   Table,
   TableRow,
   TableHead,
@@ -62,8 +61,9 @@ const MedicationTable = ({
   onActionButtonClick,
   actionButtonLabel,
   tableTitle,
-  tableSize,
+  tableRowSize,
   stickyHeader,
+  tableHeight,
 }) => {
   const classes = useStyles()
   const [source, setSource] = useState([])
@@ -359,17 +359,21 @@ const MedicationTable = ({
   }, [])
 
   return (
-    <Card>
+    <Fragment>
       {tableTitle && (
         <Typography variant="h6" gutterBottom className={classes.tableTitle}>
           {tableTitle}
         </Typography>
       )}
-      <CardContent>
+      <Paper
+        style={
+          tableHeight ? { maxHeight: tableHeight, overflow: 'auto' } : null
+        }
+      >
         <Table
           className={classes.table}
           aria-labelledby="medicationTable"
-          size={tableSize}
+          size={tableRowSize}
           stickyHeader={stickyHeader}
           aria-label="Medication table"
         >
@@ -389,8 +393,8 @@ const MedicationTable = ({
           </TableHead>
           <TableBody>{tableRows}</TableBody>
         </Table>
-      </CardContent>
-    </Card>
+      </Paper>
+    </Fragment>
   )
 }
 
@@ -411,8 +415,9 @@ MedicationTable.propTypes = {
   onActionButtonClick: PropTypes.func,
   actionButtonLabel: PropTypes.string,
   tableTitle: PropTypes.string,
-  tableSize: PropTypes.string,
+  tableRowSize: PropTypes.string,
   stickyHeader: PropTypes.string,
+  tableHeight: PropTypes.number,
 }
 
 export default MedicationTable

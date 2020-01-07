@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { Fragment, useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import {
   Checkbox,
-  Card,
-  CardContent,
+  Paper,
   Table,
   TableRow,
   TableHead,
@@ -68,8 +67,9 @@ const ConditionTable = ({
   onActionButtonClick,
   actionButtonLabel,
   tableTitle,
-  tableSize,
+  tableRowSize,
   stickyHeader,
+  tableHeight,
 }) => {
   const classes = useStyles()
   const [source, setSource] = useState([])
@@ -495,17 +495,21 @@ const ConditionTable = ({
   }, [])
 
   return (
-    <Card>
+    <Fragment>
       {tableTitle && (
         <Typography variant="h6" gutterBottom className={classes.tableTitle}>
           {tableTitle}
         </Typography>
       )}
-      <CardContent>
+      <Paper
+        style={
+          tableHeight ? { maxHeight: tableHeight, overflow: 'auto' } : null
+        }
+      >
         <Table
           className={classes.table}
           aria-labelledby="conditionTable"
-          size={tableSize}
+          size={tableRowSize}
           stickyHeader={stickyHeader}
           aria-label="Condition table"
         >
@@ -531,8 +535,8 @@ const ConditionTable = ({
           </TableHead>
           <TableBody>{tableRows}</TableBody>
         </Table>
-      </CardContent>
-    </Card>
+      </Paper>
+    </Fragment>
   )
 }
 
@@ -560,8 +564,9 @@ ConditionTable.propTypes = {
   onActionButtonClick: PropTypes.func,
   actionButtonLabel: PropTypes.string,
   tableTitle: PropTypes.string,
-  tableSize: PropTypes.string,
+  tableRowSize: PropTypes.string,
   stickyHeader: PropTypes.string,
+  tableHeight: PropTypes.number,
 }
 
 export default ConditionTable

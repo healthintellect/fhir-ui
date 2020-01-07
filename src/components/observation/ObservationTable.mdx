@@ -26,9 +26,11 @@ ObservationTable displays a material-ui table component when passed an array of 
         <ObservationTable
           observations={observations}
           tableTitle="Observation List"
-          tableSize="medium"
+          tableRowSize="medium"
           hideDevices={true}
           hideCheckboxes={true}
+          stickyHeader={true}
+          tableHeight={360}
         />
       </Grid>
     </Grid>
