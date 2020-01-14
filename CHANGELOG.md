@@ -4,9 +4,14 @@ All notable changes to this project will be documented in this file.
 
 ### [Unreleased][unreleased]
 
+### [v0.5.5][2020-01-13]
+
+- Fix error when empty patient passed to PatientBanner
+
 ### [v0.5.4][2020-01-06]
 
-- Add maxHeight and scrollable options to table components
+- Add tableHeight options to table components
+- Add scrollbar to table components
 - Fix CodeText column heading on AllergyTable
 - Change tableSize to tableRowSize for all table components
 

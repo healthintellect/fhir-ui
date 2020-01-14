@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles'
 import moment from 'moment'
 import CustomDatePicker from '../table/CustomDatePicker'
 
-const PatientBanner = ({ patient, detailLink, fieldVariant }) => {
+const PatientBanner = ({ patient }) => {
   const useStyles = makeStyles(theme => ({
     root: {
       display: 'flex',
@@ -40,98 +40,84 @@ const PatientBanner = ({ patient, detailLink, fieldVariant }) => {
     photo: '',
   })
 
-  // telecom: [
-  //   {
-  //     use: 'home',
-  //   },
-  //   {
-  //     system: 'phone',
-  //     value: '(903) 555-6473',
-  //     use: 'work',
-  //   },
-  //   {
-  //     system: 'email',
-  //     value: 'cersi.lannister@redkeep.io',
-  //     use: 'home',
-  //   },
-  // ],
-
   useEffect(() => {
     dehydratePatientResource(patient)
   }, [])
 
   const dehydratePatientResource = patient => {
-    setCurrentPatient(prevCurrentPatient => ({
-      ...prevCurrentPatient,
-      prefix: Array.isArray(patient.name[0]?.prefix)
-        ? patient.name[0].prefix[0]
-        : patient.name[0].prefix,
-      familyName: Array.isArray(patient.name[0]?.family)
-        ? patient.name[0].family[0]
-        : patient.name[0].family,
-      givenName: Array.isArray(patient.name[0]?.given)
-        ? patient.name[0].given[0]
-        : patient.name[0].given,
-      suffix: Array.isArray(patient.name[0]?.suffix)
-        ? patient.name[0].suffix[0]
-        : patient.name[0].suffix,
-      identifier: patient.identifier[0].value,
-      identifierType: patient.identifier[0]?.type?.coding[0]?.code,
-      deceased: patient.deceasedBoolean,
-      multipleBirth: patient.multipleBirthBoolean,
-      gender: patient.gender,
-      maritalStatus: patient.maritalStatus.text,
-      address1: Array.isArray(patient.address)
-        ? Array.isArray(patient.address[0]?.line)
-          ? patient.address[0]?.line[0]
-          : patient.address[0]?.line
-          ? patient.address[0]?.line
-          : ''
-        : '',
-      address2: Array.isArray(patient.address)
-        ? Array.isArray(patient.address[0]?.line)
-          ? patient.address[0]?.line[1]
-          : patient.address[0]?.line
-          ? patient.address[0]?.line
-          : ''
-        : '',
-      city: Array.isArray(patient.address)
-        ? patient.address[0]?.city
-        : patient.address
-        ? patient.address.line
-        : '',
-      state: Array.isArray(patient.address)
-        ? patient.address[0]?.state
-        : patient.address
-        ? patient.address?.state
-        : '',
-      postalCode: Array.isArray(patient.address)
-        ? patient.address[0]?.postalCode
-        : patient.address
-        ? patient.address?.postalCode
-        : '',
-      country: Array.isArray(patient.address)
-        ? patient.address[0]?.country
-        : patient.address
-        ? patient.address?.country
-        : '',
-      species: patient.animal?.species?.text,
-      language: Array.isArray(patient.communication)
-        ? patient.communication[0]?.language?.text
-        : '',
-      photo: patient.photo ? patient.photo[0].url : '',
-      phone:
-        Array.isArray(patient.telecom) &&
-        patient.telecom
-          .map(el => (el.system === 'phone' ? el.value : ''))
-          .filter(el => !!el),
-      email:
-        Array.isArray(patient.telecom) &&
-        patient.telecom
-          .map(el => (el.system === 'email' ? el.value : ''))
-          .filter(el => !!el),
-      birthDate: patient.birthDate,
-    }))
+    if (patient && Object.keys(patient).length !== 0) {
+      setCurrentPatient(prevCurrentPatient => ({
+        ...prevCurrentPatient,
+        prefix: Array.isArray(patient.name[0]?.prefix)
+          ? patient.name[0].prefix[0]
+          : patient.name[0].prefix,
+        familyName: Array.isArray(patient.name[0]?.family)
+          ? patient.name[0].family[0]
+          : patient.name[0].family,
+        givenName: Array.isArray(patient.name[0]?.given)
+          ? patient.name[0].given[0]
+          : patient.name[0].given,
+        suffix: Array.isArray(patient.name[0]?.suffix)
+          ? patient.name[0].suffix[0]
+          : patient.name[0].suffix,
+        identifier: patient.identifier[0].value,
+        identifierType: patient.identifier[0]?.type?.coding[0]?.code,
+        deceased: patient.deceasedBoolean,
+        multipleBirth: patient.multipleBirthBoolean,
+        gender: patient.gender,
+        maritalStatus: patient.maritalStatus.text,
+        address1: Array.isArray(patient.address)
+          ? Array.isArray(patient.address[0]?.line)
+            ? patient.address[0]?.line[0]
+            : patient.address[0]?.line
+            ? patient.address[0]?.line
+            : ''
+          : '',
+        address2: Array.isArray(patient.address)
+          ? Array.isArray(patient.address[0]?.line)
+            ? patient.address[0]?.line[1]
+            : patient.address[0]?.line
+            ? patient.address[0]?.line
+            : ''
+          : '',
+        city: Array.isArray(patient.address)
+          ? patient.address[0]?.city
+          : patient.address
+          ? patient.address.line
+          : '',
+        state: Array.isArray(patient.address)
+          ? patient.address[0]?.state
+          : patient.address
+          ? patient.address?.state
+          : '',
+        postalCode: Array.isArray(patient.address)
+          ? patient.address[0]?.postalCode
+          : patient.address
+          ? patient.address?.postalCode
+          : '',
+        country: Array.isArray(patient.address)
+          ? patient.address[0]?.country
+          : patient.address
+          ? patient.address?.country
+          : '',
+        species: patient.animal?.species?.text,
+        language: Array.isArray(patient.communication)
+          ? patient.communication[0]?.language?.text
+          : '',
+        photo: patient.photo ? patient.photo[0].url : '',
+        phone:
+          Array.isArray(patient.telecom) &&
+          patient.telecom
+            .map(el => (el.system === 'phone' ? el.value : ''))
+            .filter(el => !!el),
+        email:
+          Array.isArray(patient.telecom) &&
+          patient.telecom
+            .map(el => (el.system === 'email' ? el.value : ''))
+            .filter(el => !!el),
+        birthDate: patient.birthDate,
+      }))
+    }
   }
 
   return (
