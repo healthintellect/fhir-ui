@@ -18,9 +18,9 @@
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/healthintellect/fhir-ui.git"
+    "url": "git://github.com/healthintellect/fhir-ui"
   },
+  "publishConfig": { "registry": "https://npm.pkg.github.com/healthintellect" },
   "author": "Brayton Stafford <info@healthintellect.com>",
   "license": "MIT",
   "files": [

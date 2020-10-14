@@ -110,15 +110,15 @@ Please refer to each component's CodeSandbox.io example for an example on how to
 
 ## CodeSandbox.io Examples
 
-- [PatientCard](https://codesandbox.io/s/fhir-ui-patient-card-demo-jzyi3)
-- [PatientTable](https://codesandbox.io/s/fhir-ui-patient-table-demo-f2gkg)
-- [PatientDetail](https://codesandbox.io/s/fhir-ui-patient-detail-demo-cuz95)
-- [PatientBanner](https://codesandbox.io/s/fhir-ui-patient-banner-demo-dn88y)
-- [ObservationTable](https://codesandbox.io/s/fhir-ui-observation-table-demo-86150)
-- [ObservationDetail](https://codesandbox.io/s/fhir-ui-observation-detail-demo-5584s)
-- [ConditionTable](https://codesandbox.io/s/fhir-ui-condition-table-demo-0wivy)
-- [AllergyTable](https://codesandbox.io/s/fhir-ui-allergy-table-demo-ynk75)
-- [MedicationTable](https://codesandbox.io/s/fhir-ui-medication-table-demo-i2d7i)
+- [PatientCard](https://codesandbox.io/s/fhir-ui-patient-card-demo-yq5yg)
+- [PatientTable](https://codesandbox.io/s/fhir-ui-patient-table-demo-4dbfx)
+- [PatientDetail](https://codesandbox.io/s/fhir-ui-patient-detail-demo-9jhx6)
+- [PatientBanner](https://codesandbox.io/s/fhir-ui-patient-banner-demo-1u9lm)
+- [ObservationTable](https://codesandbox.io/s/fhir-ui-observation-table-demo-7nn4q)
+- [ObservationDetail](https://codesandbox.io/s/fhir-ui-observation-detail-demo-2qcio)
+- [ConditionTable](https://codesandbox.io/s/fhir-ui-condition-table-demo-7x4gm)
+- [AllergyTable](https://codesandbox.io/s/fhir-ui-allergy-table-demo-g2kgo)
+- [MedicationTable](https://codesandbox.io/s/fhir-ui-medication-table-demo-hxrt9)
 
 ## License
 
