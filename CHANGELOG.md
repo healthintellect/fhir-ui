@@ -2,9 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-### [v0.5.6][2020-10-13]
+### [v0.5.7][2020-10-13]
 
 - Fix full name on patient card
+- Update CodeSandbox.io links in README.md
+- Add GitHub package details to package.json
 
 ### [v0.5.5][2020-01-13]
 
