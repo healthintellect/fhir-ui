@@ -2,7 +2,9 @@
 
 All notable changes to this project will be documented in this file.
 
-### [Unreleased][unreleased]
+### [v0.5.6][2020-10-13]
+
+- Fix full name on patient card
 
 ### [v0.5.5][2020-01-13]
 

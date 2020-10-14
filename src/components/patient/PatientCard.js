@@ -63,15 +63,20 @@ const PatientCard = ({ patient, detailLink, fieldVariant }) => {
   })
 
   useEffect(() => {
+    const familyName = Array.isArray(patient.name[0].family)
+      ? patient.name[0].family[0]
+      : patient.name[0].family
+    const givenName = Array.isArray(patient.name[0].given)
+      ? patient.name[0].given[0]
+      : patient.name[0].given
+    const fullName = patient.name[0]?.text
+      ? patient.name[0].text
+      : givenName + ' ' + familyName
     setCurrentPatient(prevPatient => ({
       ...prevPatient,
-      fullName: patient.name[0].text,
-      familyName: Array.isArray(patient.name[0].family)
-        ? patient.name[0].family[0]
-        : patient.name[0].family,
-      givenName: Array.isArray(patient.name[0].given)
-        ? patient.name[0].given[0]
-        : patient.name[0].given,
+      fullName,
+      familyName,
+      givenName,
       email: patient.telecom
         .map(el => (el.system === 'email' ? el.value : ''))
         .filter(el => !!el),
@@ -80,7 +85,13 @@ const PatientCard = ({ patient, detailLink, fieldVariant }) => {
       avatar: patient.photo
         ? patient.photo[0].url
         : 'https://cdn1.iconfinder.com/data/icons/user-pictures/100/unknown-512.png',
-      identifier: patient.identifier[0].value,
+      identifier: patient.identifier[0]?.value
+        ? patient.identifier[0]?.value
+        : patient.id
+        ? patient.id
+        : patient.identifier
+        ? patient.identifier
+        : 'Unknown',
     }))
   }, [])
 

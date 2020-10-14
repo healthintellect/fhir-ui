@@ -43,7 +43,6 @@
     "test:watch": "react-scripts test --env=jsdom",
     "build": "rollup -c",
     "start": "rollup -c -w",
-    "prepare": "yarn run build",
     "docz:dev": "docz dev --config ./doczrc.js",
     "docz:build": "docz build --config ./doczrc.js",
     "deploy": "yarn docz:build && gh-pages -d .docz/dist"
