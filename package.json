@@ -23,7 +23,7 @@
     "directory": "fhir-ui"
   },
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/healthintellect"
+    "registry": "https://registry.npmjs.org/"
   },
   "author": "Brayton Stafford <info@healthintellect.com>",
   "license": "MIT",
