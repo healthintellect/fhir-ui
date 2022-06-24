@@ -97,7 +97,7 @@ const ObservationDetail = ({
     dehydrateObservationResource(observation)
     setObservationId(observation.identifier[0].value)
     setCurrentObservation(observation)
-  }, [])
+  }, [observation])
 
   const dehydrateObservationResource = observation => {
     setForm(prevForm => ({

@@ -93,7 +93,7 @@ const PatientCard = ({ patient, detailLink, fieldVariant }) => {
         ? patient.identifier
         : 'Unknown',
     }))
-  }, [])
+  }, [patient])
 
   const updateCurrentPatient = e => {
     e.preventDefault()

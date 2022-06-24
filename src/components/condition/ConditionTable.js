@@ -492,7 +492,7 @@ const ConditionTable = ({
       }
       setTableRows(allTableRows)
     }
-  }, [])
+  }, [conditions])
 
   return (
     <Fragment>

@@ -356,7 +356,7 @@ const MedicationTable = ({
       }
       setTableRows(allTableRows)
     }
-  }, [])
+  }, [medications])
 
   return (
     <Fragment>

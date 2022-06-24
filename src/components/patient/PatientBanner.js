@@ -42,7 +42,7 @@ const PatientBanner = ({ patient }) => {
 
   useEffect(() => {
     dehydratePatientResource(patient)
-  }, [])
+  }, [patient])
 
   const dehydratePatientResource = patient => {
     if (patient && Object.keys(patient).length !== 0) {

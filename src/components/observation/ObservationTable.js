@@ -391,7 +391,7 @@ const ObservationTable = ({
       }
       setTableRows(allTableRows)
     }
-  }, [])
+  }, [observations])
 
   return (
     <Fragment>

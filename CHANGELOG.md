@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
+### [v0.6.3][2022-06-23]
+
+- Fix allergy table re-render on allergies change
+- Fix condition table re-render on conditions change
+- Fix medication table re-render on medications change
+- Fix observation table re-render on observations change
+- Fix observation detail re-render on observation change
+- Fix patient card re-render on patient change
+- Fix patient banner re-render on patient change
 ### [v0.5.7][2020-10-13]
 
 - Fix full name on patient card

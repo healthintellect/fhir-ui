@@ -404,7 +404,7 @@ const AllergyTable = ({
       }
       setTableRows(allTableRows)
     }
-  }, [])
+  }, [allergies])
 
   return (
     <Fragment>
